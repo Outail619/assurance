@@ -1,0 +1,981 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset ("css/font-awesome.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/bootstrap.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/style.css") }}" rel="stylesheet">
+
+
+
+
+    <style>
+
+        aside {
+            background-color: #34495E;
+            display: inline-block;
+            height: 100vh;
+            position: fixed;
+            width: 20%;
+        }
+        aside header {
+            box-sizing: border-box;
+            background-color: #2DCC70;
+            height: 80px;
+            padding: 0 15px;
+        }
+        aside header img,
+        aside header p {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        aside header img {
+            border-radius: 50%;
+        }
+        aside header p {
+            font-size: 13px;
+            color: white;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+        aside header > div {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        aside .profile-picture {
+            height: 55px;
+            width: 55px;
+        }
+        .side-navigation {
+            font-size: 14px;
+        }
+        .side-navigation a {
+            color: #92A1A2;
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .side-navigation i.fa {
+            color: #92A1A2;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+        .side-navigation li.active a,
+        .side-navigation li:hover a {
+            background-color: #233342;
+            color: white;
+        }
+        .side-navigation li.active i,
+        .side-navigation li:hover i {
+            color: #2DCC70;
+        }
+        main {
+            float: right;
+            vertical-align: top;
+            width: 80%;
+        }
+        .main-head {
+            *zoom: 1;
+            height: 80px;
+            border-bottom: 1px solid #92A1A2;
+            color: #92A1A2;
+            font-size: 20px;
+            padding: 0 20px;
+            position: relative;
+        }
+        .main-head:before,
+        .main-head:after {
+            content: "";
+            display: table;
+        }
+        .main-head:after {
+            clear: both;
+        }
+        .main-head .icons {
+            float: left;
+            font-size: 21px;
+        }
+        .main-head .icons .fa {
+            position: relative;
+        }
+        .main-head .icons .fa + .fa {
+            margin-left: 20px;
+        }
+        .main-head .logo {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .main-head .logo .fa {
+            color: #2DCC70;
+            font-size: 40px;
+        }
+        .main-head .icons,
+        .main-head .search {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .search {
+            float: right;
+        }
+        .search input {
+            border: 0;
+            border-bottom: 1px solid transparent;
+            font-size: 13px;
+            margin-right: 10px;
+            outline: none;
+            padding-bottom: 3px;
+        }
+        .search input:hover,
+        .search input:focus {
+            border-bottom: 1px solid #92A1A2;
+        }
+        .user-card {
+            display: inline-block;
+        }
+        .user-card figure {
+            display: inline-block;
+        }
+        .user-card figure img {
+            border-radius: 50%;
+            vertical-align: middle;
+            width: 110px;
+        }
+        .user-card .name {
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .user-card .user-role,
+        .user-card .experience-points {
+            color: #92A1A2;
+            font-size: 16px;
+        }
+        .user-card .experience-points .fa {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .user-card .experience-points .fa:hover {
+            color: #92A1A2;
+            cursor: default;
+        }
+        .user-card .user-info {
+            display: inline-block;
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+        .user-card .user-info span {
+            padding-right: 10px;
+        }
+        .user-card .user-info .fa-star {
+            font-size: 18px;
+            margin: 0 1px;
+            position: relative;
+            top: -1px;
+        }
+        .user-card .user-info .fa-star.on {
+            color: #E54239;
+        }
+        .user-card .user-info .fa-star.off {
+            color: #92A1A2;
+        }
+        .user-card .user-role {
+            margin: 9px 0;
+        }
+        .user-card .user-role a {
+            color: #59A4E8;
+            margin-left: 11px;
+            text-decoration: none;
+        }
+        .action-links {
+            float: right;
+            margin-top: 22px;
+        }
+        .action-links a {
+            border: 1px solid #92A1A2;
+            color: #92A1A2;
+            border-radius: 50%;
+            display: block;
+            padding: 10px;
+            position: relative;
+        }
+        .action-links a:hover {
+            background-color: #2DCC70;
+            border-color: #2DCC70;
+        }
+        .action-links a:hover .fa {
+            color: white;
+        }
+        .action-links a:before,
+        .action-links a:after {
+            left: 50%;
+            opacity: 0;
+            position: absolute;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            transition: all 0.2s ease;
+            visibility: hidden;
+        }
+        .action-links a:before {
+            background-color: black;
+            border-radius: 3px;
+            color: white;
+            content: attr(data-title);
+            font-size: 12px;
+            padding: 5px;
+            text-decoration: none;
+            top: -35px;
+            width: 80px;
+        }
+        .action-links a:after {
+            border-bottom: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-left: 6px solid transparent;
+            border-top: 6px solid black;
+            content: "";
+            top: -13px;
+        }
+        .action-links a:hover:before,
+        .action-links a:hover:after {
+            opacity: 1;
+            visibility: visible;
+        }
+        .action-links li {
+            display: inline-block;
+            text-align: center;
+        }
+        .action-links li + li {
+            margin-left: 15px;
+        }
+        .action-links .fa {
+            display: inline-block;
+            height: 20px;
+            font-size: 19px;
+            width: 20px;
+        }
+        .category-navigation {
+            border-bottom: 1px solid #92A1A2;
+            padding: 30px 30px 0;
+        }
+        .category-navigation a {
+            box-sizing: border-box;
+            color: #2B3A4F;
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 6px 0 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .category-navigation li {
+            display: inline-block;
+        }
+        .category-navigation li + li {
+            margin-left: 25px;
+        }
+        .category-navigation li.active a,
+        .category-navigation li:hover a {
+            border-bottom: 4px solid #2DCC70;
+        }
+        .category-navigation.container {
+            padding-bottom: 0;
+            padding-top: 10px;
+        }
+        .card {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+        }
+        .card li {
+            box-sizing: border-box;
+            color: #92A1A2;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 15px 16px;
+            position: relative;
+        }
+        .card li .icon {
+            position: absolute;
+            left: 10px;
+        }
+        .card li + li {
+            border-top: 1px solid #92A1A2;
+        }
+        .card li:before {
+            content: "";
+            height: 100%;
+            left: -1px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 4px;
+        }
+        .card li:hover {
+            background-color: #ECF0F1;
+            color: #2B3A4F;
+        }
+        .card li:hover:before {
+            opacity: 1;
+        }
+        .card .hidden-content {
+            border-top: 1px solid #92A1A2;
+        }
+        .card .show-more {
+            border-top: 1px solid #92A1A2;
+            color: #2B3A4F;
+            font-size: 12px;
+            padding: 8px 15px;
+            text-align: right;
+        }
+        .card .show-more .fa {
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        .card .show-more:before {
+            content: none;
+        }
+        .card .tabs {
+            position: relative;
+        }
+        .card .tabs li {
+            background: transparent;
+            border: 0;
+            border-radius: 3px 3px 0 0;
+            box-sizing: border-box;
+            color: #92A1A2;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 50%;
+        }
+        .card .tabs li span {
+            display: block;
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .card .tabs li.active {
+            background-color: white;
+            border: 1px solid #92A1A2;
+            border-bottom: 0;
+        }
+        .card + .card {
+            margin-left: 5%;
+        }
+        .card.green .content li:before {
+            background-color: #2DCC70;
+        }
+        .card.green .tabs li.active {
+            color: #2DCC70;
+        }
+        .card.orange .content li:before {
+            background-color: #E54239;
+        }
+        .card.orange .tabs li.active {
+            color: #E54239;
+        }
+        .card.purple .content li:before {
+            background-color: #8F40B3;
+        }
+        .card.purple .tabs li.active {
+            color: #8F40B3;
+        }
+        .content {
+            background-color: white;
+            border: 1px solid #92A1A2;
+            border-radius: 0 0 3px 3px;
+            box-sizing: border-box;
+            display: none;
+            margin-top: -1px;
+            overflow: hidden;
+        }
+        .content .has-icon li:not(.show-more) {
+            padding: 15px 16px 15px 43px;
+        }
+        .content .fa {
+            font-size: 14px;
+            line-height: 0;
+            padding-right: 3px;
+        }
+        .content.visible {
+            display: block;
+        }
+        .card.card-full {
+            margin-left: 0;
+            margin-top: 5%;
+            width: 100%;
+        }
+        .card.card-full .content {
+            display: inline-block;
+            height: 280px;
+            margin-top: 0;
+            overflow: visible;
+        }
+        .card.card-full .content.activity {
+            border-radius: 0 0 3px 0;
+        }
+        .card.card-full .content.experience-graphs {
+            border-right: 0;
+            border-radius: 0 0 0 3px;
+        }
+        .graph {
+            bottom: 0;
+            height: 100%;
+            left: 10px;
+            position: absolute;
+            text-align: center;
+            width: 25px;
+        }
+        .graph .bar {
+            font-size: 10px;
+            left: 50%;
+            position: absolute;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        .graph .value {
+            background: #2DCC70;
+            bottom: 0;
+            display: inline-block;
+            height: 40.6px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+        .graph:before {
+            background-color: #000;
+            content: "";
+            bottom: 0;
+            position: absolute;
+            width: 50px;
+        }
+        .container {
+            background-color: #ECF0F1;
+            padding: 15px;
+        }
+        .container.user {
+            background-color: white;
+        }
+        h3 {
+            color: #92A1A2;
+            font-size: 15px;
+            margin: 0 0 15px;
+        }
+        .fa:not(.fa-star):hover {
+            color: #2DCC70;
+            cursor: pointer;
+        }
+        .number-alert {
+            background-color: #E54239;
+            border-radius: 50%;
+            box-sizing: border-box;
+            color: white;
+            display: inline-block;
+            font-family: "Tahoma";
+            font-size: 9px;
+            height: 15px;
+            padding: 3px 0;
+            position: absolute;
+            right: -25%;
+            text-align: center;
+            top: -25%;
+            width: 15px;
+        }
+
+        footer {
+            *zoom: 1;
+            bottom: 0;
+            padding: 0 15px;
+            position: fixed;
+            right: 0;
+            text-align: right;
+            width: 100%;
+        }
+        footer:before,
+        footer:after {
+            content: "";
+            display: table;
+        }
+        footer:after {
+            clear: both;
+        }
+        footer .item {
+            display: inline-block;
+            color: #2B3A4F;
+            font-size: 10px;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+        footer .item + .item {
+            margin-left: 10px;
+        }
+        footer .link {
+            width: 32px;
+        }
+        footer img {
+            width: 100%;
+        }
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+        }
+        p {
+            margin: 0;
+        }
+
+    </style>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Junge);
+
+        #scroll {
+            height: 300px;
+            border: 1px solid #ddd;
+            width: 60%;
+            overflow: auto;
+        }
+
+
+        .panel-css {
+
+
+            list-style: none;
+            background-color: rgba(0, 0, 0, 0.05);
+            background-image:
+                    linear-gradient(
+                            90deg,
+                            #2DCC70 10px,
+                            #EEE 10px,
+                            #EEE 11px,
+                            transparent 11px);
+            padding: 10px 15px 10px 25px;
+            border: 1px solid #CCC;
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+            width: 90%;
+            box-sizing: border-box;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+
+        #notebooks span {
+            display: block;
+            position: absolute;
+            background: #2DCC70;
+            bottom: -35px;
+            left: -1px;
+            width: 360px;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #notebooks select {
+            width: 120px;
+            margin-left: 230px;
+            margin-top: -45px;
+            border-radius: 0 3px 3px 0;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            position: absolute;
+            padding: 7.5px;
+            box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        #notebooks select:focus, #query:focus {
+            border: 1px solid #2DCC70;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+            outline: none;
+        }</style>
+    <style>
+        .editb {
+            border-radius: 50%;
+            padding: 7px 11px 7px 11px;
+            outline: none;
+            background: gray;
+            border: 1px solid darkgray;
+            color: white;
+            transition: 0.5s linear;
+        }
+
+        .editb:hover {
+            background: darkgray;
+        }
+
+        /* delete button*/
+
+
+        /* yes delete button*/
+
+
+
+        h3 span {
+            color: #fa3380;
+        }
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+
+        .alert h4 {
+            margin: 0
+        }
+
+
+
+        .tab_grid_prof {
+            padding: 1em;
+            background: #fffdfd;
+            padding: 1em;
+            border: 1px solid rgba(221, 221, 221, 0.74);
+        }
+        .tab_grid_prof:nth-child(2),
+        .tab_grid_prof:nth-child(4) {
+            margin: 2em 0;
+        }
+
+        .tab_grid_prof:nth-child(5) {
+            margin: 0em 0 2em 0;
+        }
+
+        /* edit buttons */
+
+        #save-edit-btn {
+            border-radius: 100px;
+            outline: none;
+        }
+
+        #save-close-btn {
+            border-radius: 100px;
+            background: #0F9E5E;
+            color: #fff;
+            outline: none;
+        }
+
+
+
+        /*  FOLLOW*/
+
+
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<aside>
+    <header>
+        <div><img class="profile-picture" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_10.png"/>
+            <p>{{ app.user.username }}</p>
+        </div>
+    </header>
+    <nav class="side-navigation">
+        <ul>
+            <li class="active"><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#" id="about"><i class="fa fa-star"></i>About Me</a></li>
+            <li><a href="#" id="contracts"><i class="fa fa-star"></i>Contracts</a></li>
+            <li><a href="#"><i class="fa fa-comments"></i>Reclamations</a></li>
+            <li><a href="#"><i class="fa fa-area-chart"></i>Devis</a></li>
+        </ul>
+    </nav>
+</aside>
+<main>
+    <header class="main-head">
+        <div class="icons"><i class="fa fa-user-md"></i><i class="fa fa-comments-o"></i><i class="fa fa-bell-o"><span class="number-alert">3</span></i></div>
+        <div class="logo"><i class="fa fa-rocket"></i></div>
+        <div class="search">
+            <input type="text" name="search" placeholder="Type here to search..." autocomplete="off"/><i class="fa fa-search"></i>
+        </div>
+    </header>
+    <div class="container user">
+        <div class="user-card">
+            <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_10.png"/></figure>
+            <div class="user-info">
+                <div class="name"> <span>{{ app.user.username }}</span><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+                <div class="user-role">
+                    Student &nbsp; &#8226;<a href="#">Learn more</a>
+                </div>
+                <div class="experience-points"><i class="fa fa-coffee"></i>8,977 exp</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content-->
+    <div class="wrapper">
+        <ul class="category-navigation">
+            <li><a name="2" id="test1" href="{{ path("list_constat") }}"> Lister les constats</a></li>
+            <li><a name="1" id="test" href="{{ path("add_constat") }}"> Ajouter un constat</a></li>
+        </ul>
+
+        <div class="container">
+            <div class="inner_sec_grids_info_w3ls">
+                <div class="signin-form">
+                    <div class="login-form-rec">
+                        <form method="post">
+                            <select id="country13" name="contrata" class="frm-field required">
+                                <option selected="selected">Veuillez choisir un de vos contrat</option>{% for c in contrats %}
+                                <option style="text-align: start">{{ c.id }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="text" name="contratb" placeholder="Numero du contrat d'assurance de l'autre conducteur" required="">
+                            <input type="text" name="Place" placeholder="Place" required="">
+                            Est-ce qu'il tu es blessé ?   Non
+                            <input type="radio" name="degath" id="degath"  required="" value="N"> | Oui
+                            <input type="radio" name="degath" id="degath"  required="" value="O"></br>
+                            Est-ce qu'il y'a des dégats matériels ?   Non
+                            <input type="radio" name="degatm" id="degatm"  required="" value="N"> | Oui
+                            <input type="radio" name="degatm" id="degatm"  required="" value="O">
+                            <!--<select id="ddi" name="circonstances" class="frm-field required">
+                                <option selected="selected">Veuillez choisir la/les circonstances</option>
+                                <option style="text-align: start">En stationnement/à l'arret</option>
+                                <option style="text-align: start">Quittait un stationnement/Ouverture d'une porte</option>
+                                <option style="text-align: start">Prenaint un stationnement</option>
+                                <option style="text-align: start">Sortait d'un parking, d'un lieu privé, d'un chemin de terre</option>
+                                <option style="text-align: start">S'engageait dans un parking/lieu privé/chemin de terre</option>
+                                <option style="text-align: start"></option>
+                                <option style="text-align: start"></option>
+                                <option style="text-align: start"></option>
+                                <option style="text-align: start"></option>
+                            </select>!-->
+                            <table border="1" style="align-self: center">
+                                <tr><td colspan="8">En stationnement/à l'arret </td><td><input type="checkbox" id="c1" name="c1" value=" En stationnement/à l'arret ."></td></tr>
+                                <tr><td colspan="8">Quittait un stationnement </td><td><input type="checkbox" id="c2" name="c2" value=" Quittait un stationnement"></td><tr>
+                                <tr><td colspan="8">Prenait un stationnement </td><td><input type="checkbox" id="c3" name="c3" value=" Prenait un stationnement"></td></tr>
+
+                                <tr><td colspan="8">Sortait d'un parking/lieu privé/chemin de terre </td><td><input type="checkbox" id="c4" name="c4" value=" Sortait d'un parking/lieu privé/chemin de terre ."></td></tr>
+                                <tr><td colspan="8">S'engageait dans un parking/lieu privé/chemin de terre</td><td><input type="checkbox" id="c5" name="c5" value=" S'engageait dans un parking/lieu privé/chemin de terre ."></td></tr>
+                                <tr><td colspan="8">Roulait une une place à sens giratoire</td><td><input type="checkbox" id="c6" name="c6" value=" Roulait une une place à sens giratoire ."></td></tr>
+
+                                <tr><td colspan="8">Heurtait à l'arrière</td><td><input type="checkbox" id="c7" name="c7" value=" Heurtait à l'arrière ."></td></tr>
+                                <tr> <td colspan="8">Changeait de file</td><td><input type="checkbox" id="c8" name="c8" value=" Changeait de file ."></td></tr>
+                                <tr><td colspan="8">Doublait</td><td><input type="checkbox" id="c9" name="c9" value=" Doublait ."></td></tr>
+
+                                <tr><td colspan="8">Virait à droite</td><td><input type="checkbox" id="c10" name="c10" value=" Virait à droite ."></td></tr>
+                                <tr><td colspan="8">Virait à gauche</td><td><input type="checkbox" id="c11" name="c11" value=" Virait à gauche ."></td></tr>
+                                <tr><td colspan="8">Reculait </td><td><input type="checkbox" id="c12" name="c12" value=" Reculait ."></td></tr>
+
+                                <tr><td colspan="8">Venait de droite (dans un carrefour)</td><td><input type="checkbox" id="c13" name="c13" value=" Venait de droite (dans un carrefour) ."></td></tr>
+                                <tr><td colspan="8">N'avait pas observé un signal de priorité ou un feu rouge</td><td><input type="checkbox" id="c14" name="c14" value=" N'avait pas observé un signal de priorité ou un feu rouge ."></td></tr>
+                                <tr><td colspan="8">Empiétait sur une voie réservée à la circulation en sens inverse </td><td><input type="checkbox" id="c15" name="c15" value=" Empiétait sur une voie réservée à la circulation en sens inverse ."></td></tr>
+                            </table>
+                            <input type="text" name="obs" id="obs" placeholder="Observation" required="">
+                            <!--<div class="form-inputs upload">
+
+                                <div id="filedrag">Upload our proof</div>
+                            </div>!-->
+                            <input type="file" name="fileselect" enctype="multipart/form-data" />
+                            <!-- <select id="country13" class="frm-field required">
+                                <option value="null">Qualification</option>
+                                <option value="">Bsc</option>
+                                <option value="">BTech</option>
+                                <option value="">Mca</option>
+                                <option value="">BCA</option>
+                                <option value="">Diploma</option>
+                                <option value="">Other</option>
+                            </select>!-->
+                            <input type="submit" value="Déclarer le constat">
+                        </form>
+                    </div>
+                    <!--<p class="reg"><a href="#"> By clicking register, I agree to your terms</a></p>!-->
+
+                </div>
+            </div>
+
+        </div>
+</main>
+<!-- //footer -->
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js-account/easyResponsiveTabs.js') }}"></script>
+
+<script src="{{ asset('js/2_jquery.ui.widget.js') }}"></script>
+<script src="{{ asset('js/3_jquery.iframe-transport.js') }}"></script>
+<script src="{{ asset('js/4_jquery.fileupload.js') }}"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{ asset('js/5_init.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+<!-- light-case -->
+<script src="{{ asset('js-account/lightcase.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/table.js') }}"></script>
+<script src="{{ asset('js-account/jquery.events.touch.js') }}"></script>
+<script>
+    $('.showcase').lightcase();
+</script>
+<script>
+
+    /// <reference path="typings/jquery.d.ts" />
+    var Navigation = /** @class */ (function () {
+        function Navigation() {
+            this.navItem = $('.side-navigation li');
+            this.categoryItem = $('.category-navigation li');
+            this.activeItem(this.navItem);
+            this.activeItem(this.categoryItem);
+        }
+        Navigation.prototype.activeItem = function (elem) {
+            var _this = this;
+            elem.click(function (event) {
+                event.preventDefault();
+                elem.removeClass("active");
+                $(event.currentTarget).addClass("active");
+                var url = $('a', $(event.currentTarget)).attr("data-url");
+                _this.fireAjax(url);
+            });
+        };
+        Navigation.prototype.fireAjax = function (url) {
+            var _this = this;
+            var main = $('.wrapper');
+            $.ajax({
+                url: url,
+                type: "GET",
+                beforeSend: function () {
+                    _this.startLoader();
+                },
+                success: function () {
+                    setTimeout(function () {
+                        _this.destroyLoader();
+                    }, 5000);
+                }
+            });
+        };
+        Navigation.prototype.startLoader = function () {
+            $('.wrapper').addClass("loading").append('<div class="loader"></div>');
+        };
+        Navigation.prototype.destroyLoader = function () {
+            $('.wrapper').removeClass("loading");
+            $('.spinner').remove();
+        };
+        return Navigation;
+    }());
+    var Tabs = /** @class */ (function () {
+        function Tabs() {
+            this.tab = $('.card .tabs li');
+            this.changeTab();
+        }
+        Tabs.prototype.changeTab = function () {
+            this.tab.click(function (event) {
+                var tab = $(event.currentTarget);
+                var tabId = tab.attr("data-tab");
+                tab.addClass("active");
+                tab.siblings().removeClass("active");
+                $('.card .content[data-content=' + tabId + ']').siblings().removeClass("visible");
+                $('.card .content[data-content=' + tabId + ']').addClass("visible");
+            });
+        };
+        return Tabs;
+    }());
+    var Collapse = /** @class */ (function () {
+        function Collapse() {
+            this.collapse();
+        }
+        Collapse.prototype.collapse = function () {
+            $('.hidden-content').slideUp("fast");
+            $('.show-more').click(function (event) {
+                var target = $(event.currentTarget), less = target.attr("data-less"), more = target.attr("data-more");
+                if (target.hasClass("active")) {
+                    target.removeClass("active");
+                    $('span', target).text(more);
+                    $('.fa', target).removeClass().addClass("fa fa-chevron-down");
+                    target.prev('.hidden-content').slideUp(250);
+                }
+                else {
+                    target.addClass("active");
+                    $('span', target).text(less);
+                    $('.fa', target).removeClass().addClass("fa fa-chevron-up");
+                    target.prev('.hidden-content').slideDown(250);
+                }
+            });
+        };
+        return Collapse;
+    }());
+    var Graphs = /** @class */ (function () {
+        function Graphs() {
+            this.graph = $('.graph');
+            this.setGraphValue();
+        }
+        Graphs.prototype.setGraphValue = function () {
+            this.graph.each(function (i, element) {
+                var graph = $(element),
+                    // margin to correct the card graphs when there is a 100% value
+                    margin = graph.parents('.experience-graphs').length ? 0 : 13, bar = $('.bar', graph), barText = graph.attr("data-text"), value = $('.value', graph), parentHeight = graph.parent().innerHeight() - margin, barValue = parseInt(graph.attr("data-value")), barHeight = parentHeight * (barValue / 100);
+                bar.text(barText);
+                value.css({
+                    height: barHeight + "px"
+                });
+                bar.css({
+                    bottom: (barHeight - 1) + "px"
+                });
+            });
+        };
+        return Graphs;
+    }());
+    var LineChart = /** @class */ (function () {
+        function LineChart() {
+        }
+        LineChart.prototype.initChart = function () {
+            var ctx = $("#lineChart");
+            var myLineChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+        };
+        return LineChart;
+    }());
+    new Navigation();
+    new Tabs();
+    new Collapse();
+    new Graphs();
+    new LineChart();
+
+</script>
+<!-- //light-case -->
+
+</body>
+</html>

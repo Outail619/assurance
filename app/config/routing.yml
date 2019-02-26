@@ -1,0 +1,11 @@
+entity:
+    resource: "@EntityBundle/Resources/config/routing.yml"
+    prefix:   /entity
+
+assurance:
+    resource: "@AssuranceBundle/Resources/config/routing.yml"
+    prefix:   /assurance
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

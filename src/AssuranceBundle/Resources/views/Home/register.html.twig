@@ -1,0 +1,329 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <title>Quick Register Form Responsive Widget Template :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Quick Register F                                                                                                                                     orm Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="{{ asset('css/css-register/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="all">
+	<link href="{{ asset('css/css-register/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        .box
+        {
+            width:800px;
+            margin:0 auto;
+        }
+        .active_tab1
+        {
+            background-color:#fff;
+            color:#333;
+            font-weight: 600;
+        }
+        .inactive_tab1
+        {
+            background-color: #f5f5f5;
+            color: #333;
+            cursor: not-allowed;
+        }
+        .has-error
+        {
+            border-color:#cc0000;
+            background-color:#ffff99;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="signupform">
+	<h1>Please provide lethal informations </h1>
+	<div class="container">
+
+		<div class="agile_info">
+			<div class="w3_info">
+				<h2>Register Here</h2>
+                <form method="post" id="register_form" name="rami" enctype="multipart/form-data">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active_tab1" style="border:1px solid #ccc" id="list_login_details">User Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link inactive_tab1" id="list_personal_details" style="border:1px solid #ccc">Vehicule Details</a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" style="margin-top:16px;">
+                        <div class="tab-pane active" id="login_details">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">User Details</div>
+                                <div class="panel-body">
+                                    <div class="left margin">
+                                        <label>Full Name</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="text" name="full_name"  placeholder="Full Name" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Email</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="email" name="email" placeholder="Email" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left margin">
+                                        <label>Address</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                            <input type="text" placeholder="Address" name="address" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Phone Number</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                            <input type="text" placeholder="Phone" name="phone" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Password</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="password" placeholder="password" name="password" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left margin">
+                                        <label>Confirm Password</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                            <input type="password" placeholder="Confirm Password" name="c_password" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="left">
+                                        <div class="input-group">
+
+                                            <div class="form-inputs upload">
+                                                <p>Upload your Cin</p>
+                                                <input type="file" id="fileselect" name="fileselect" multiple="multiple" />
+                                                <div id="filedrag">Upload</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div align="center">
+                                        <button type="button" name="btn_login_details" id="btn_login_details" class="btn btn-info btn-lg">Next</button>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="personal_details">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Vehicule Details</div>
+                                <div class="panel-body">
+                                    <div class="left margin">
+                                        <label>Marque</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="text"  name="marque" placeholder="First Name" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Matricule</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="text" name="matricule" placeholder="Last Name" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left margin">
+                                        <label>Puissance</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                            <input type="email" name="puissance" placeholder="Email" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Nombre place</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                            <input type="text" name="nbplace"  placeholder="Nombre place" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Date Circulation</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="date" name="date_circulation"  placeholder="Date Circulation" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left margin">
+                                        <label>Carburant</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                            <input type="text" name="carburant" placeholder="Carburant" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left margin">
+                                        <label>Valeur Déclaré</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                            <input type="text" name="valuer_d" placeholder="Valeur Déclaré" required="">
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <label>Valeur Neuve</label>
+                                        <div class="input-group">
+                                            <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                            <input type="text" name="valuer_n" placeholder="Valeur Neuve" required="">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <br />
+                                    <div align="center">
+                                        <button type="button" name="previous_btn_personal_details" id="previous_btn_personal_details" class="btn btn-default btn-lg">Previous</button>
+                                        <button type="button" name="btn_personal_details" id="btn_personal_details" class="btn btn-info btn-lg">Next</button>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                </form>
+			<!--	<form action="#" method="post">
+					<div class="left margin">
+						<label>First Name</label>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="First Name" required="">
+						</div>
+					</div>
+					<div class="left">
+						<label>Last Name</label>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="Last Name" required="">
+						</div>
+					</div>
+					<div class="left margin">
+						<label>Email Address</label>
+						<div class="input-group">
+							<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+							<input type="email" placeholder="Email" required="">
+						</div>
+					</div>
+					<div class="left">
+						<label>Phone Number</label>
+						<div class="input-group">
+							<span><i class="fa fa-phone" aria-hidden="true"></i></span>
+							<input type="text" placeholder="Phone Number" required="">
+						</div>
+					</div>
+                    <div class="left">
+                        <label>Address</label>
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="text" placeholder="Address" required="">
+                        </div>
+                    </div>
+                    <div class="left margin">
+                        <label>Email Address</label>
+                        <div class="input-group">
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <input type="email" placeholder="Email" required="">
+                        </div>
+                    </div>
+					<div class="left margin">
+						<label>Password</label>
+						<div class="input-group">
+							<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="Password" placeholder="Password" required="">
+						</div>
+					</div>
+					<div class="left">
+						<label>Confirm Password</label>
+						<div class="input-group">
+							<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="Password" placeholder="Confirm Password" required="">
+						</div>
+					</div>
+					<div class="clear"></div>
+					<input type="checkbox" value="remember-me" /> <h4> I agree to the terms & contidions </h4>
+					<button class="btn btn-danger btn-block" type="submit">Register Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button >
+				</form>-->
+			</div>
+			<div class="w3l_form">
+				<div class="left_grid_info">
+					<h3>Already Registered?</h3>
+					<p> Nam eleifend velit eget dolor vestibulum ornare. Vestibulum est nulla, fermentum eget euismod et, tincidunt at dui. Nulla tellus nisl, semper id justo vel, rutrum finibus risus. Cras vel auctor odio.</p>
+					<a href="#" class="btn">Login <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+	</div>
+	<div class="footer">
+
+		<p>&copy; 2018 Quick Register form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="blank">W3layouts</a></p>
+	</div>
+</div>
+
+
+
+
+</body>
+<script>
+    $(document).ready(function(){
+
+        $('#btn_login_details').click(function(){
+
+
+                $('#list_login_details').removeClass('active active_tab1');
+                $('#list_login_details').removeAttr('href data-toggle');
+                $('#login_details').removeClass('active');
+                $('#list_login_details').addClass('inactive_tab1');
+                $('#list_personal_details').removeClass('inactive_tab1');
+                $('#list_personal_details').addClass('active_tab1 active');
+                $('#list_personal_details').attr('href', '#personal_details');
+                $('#list_personal_details').attr('data-toggle', 'tab');
+                $('#personal_details').addClass('active in');
+            }
+        );
+
+        $('#previous_btn_personal_details').click(function(){
+            $('#list_personal_details').removeClass('active active_tab1');
+            $('#list_personal_details').removeAttr('href data-toggle');
+            $('#personal_details').removeClass('active in');
+            $('#list_personal_details').addClass('inactive_tab1');
+            $('#list_login_details').removeClass('inactive_tab1');
+            $('#list_login_details').addClass('active_tab1 active');
+            $('#list_login_details').attr('href', '#login_details');
+            $('#list_login_details').attr('data-toggle', 'tab');
+            $('#login_details').addClass('active in');
+        });
+
+        $('#btn_personal_details').click(function(){
+
+            $('#btn_contact_details').attr("disabled", "disabled");
+            $(document).css('cursor', 'prgress');
+            $("#register_form").submit();
+
+        });
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,2003 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+    <link href='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/V3.css"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset ("css/font-awesome.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/bootstrap.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/style.css") }}" rel="stylesheet">
+<style>
+    html * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+
+
+    .contracts .holdmystuff {
+        background: #ffffff;
+        max-width: 60%;
+        padding: 40px;
+        border-radius: 6px;
+        margin: 40px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+        -webkit-box-shadow: 0px 0px 80px 0px rgba(30, 30, 30, 0.2);
+        -moz-box-shadow: 0px 0px 80px 0px rgba(30, 30, 30, 0.2);
+        box-shadow: 0px 0px 80px 0px rgba(30, 30, 30, 0.2);
+        font-size: .9em;
+    }
+    .contracts .holdmystuff .holder_svg {
+        padding-bottom: 25px;
+        border-bottom: 1px solid #efefef;
+        margin-bottom: 25px;
+    }
+    .contracts .holdmystuff .holder_svg svg {
+        max-width: 40%;
+    }
+    .contracts .holdmystuff p {
+        padding-bottom: 20px;
+        margin: 0 auto;
+    }
+    .contracts .holdmystuff ul {
+        padding: 0px;
+        margin: 0 auto;
+        list-style-type: none;
+    }
+    .contracts .holdmystuff ul li {
+        display: inline-block;
+        margin: 0 auto;
+        background: #e9e9e9;
+        color: #303030;
+        padding: 10px;
+        text-decoration: none;
+        margin-bottom: 1px;
+    }
+    .contracts .holdmystuff ul li a {
+        display: table-cell;
+    }
+
+    .slim_modal {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 2;
+        display: none;
+        font-size: 1em;
+        -webkit-transition: background 0.5s ease 0.06s;
+        -moz-transition: background 0.5s ease 0.06s;
+        -ms-transition: background 0.5s ease 0.06s;
+        -o-transition: background 0.5s ease 0.06s;
+        transition: background 0.5s ease 0.06s;
+    }
+    .slim_modal.none {
+        background: rgba(10, 10, 10, 0);
+    }
+    .slim_modal.red {
+        background: rgba(228, 30, 58, 0.8);
+    }
+    .slim_modal.tan {
+        background: rgba(202, 180, 75, 0.8);
+    }
+    .slim_modal.green {
+        background: rgba(111, 171, 85, 0.8);
+    }
+    .slim_modal .sm_content {
+        background: whitesmoke;
+        text-align: center;
+        max-width: 800px;
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content {
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content {
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content {
+            padding: 15px;
+            width: 80%;
+            max-height: 90%;
+            height: auto;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content {
+            padding: 15px;
+            width: 80%;
+            max-height: 90%;
+            height: auto;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content {
+            padding: 15px;
+            width: 80%;
+            max-height: 90%;
+            height: auto;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+        }
+    }
+    .slim_modal .sm_content .sm_content_inner_wrap {
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        background: #ffffff;
+        -webkit-box-shadow: 0px 0px 1px 0 rgba(30, 30, 30, 0.5);
+        -moz-box-shadow: 0px 0px 1px 0 rgba(30, 30, 30, 0.5);
+        box-shadow: 0px 0px 1px 0 rgba(30, 30, 30, 0.5);
+        z-index: 2;
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content .sm_content_inner_wrap {
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content .sm_content_inner_wrap {
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content .sm_content_inner_wrap {
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content .sm_content_inner_wrap {
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content .sm_content_inner_wrap {
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+        }
+    }
+    .slim_modal .sm_content .sm_content_inner_wrap .sm_close_button {
+        padding: 10px;
+        width: auto;
+        display: block;
+        background: #efefef;
+    }
+    .slim_modal .sm_content .sm_content_inner_wrap .sm_area_top, .slim_modal .sm_content .sm_content_inner_wrap .sm_area_bottom, .slim_modal .sm_content .sm_content_inner_wrap .sm_area_all {
+        padding: 4em;
+    }
+    .slim_modal .sm_content .sm_content_inner_wrap .sm_area_top h3 span, .slim_modal .sm_content .sm_content_inner_wrap .sm_area_bottom h3 span, .slim_modal .sm_content .sm_content_inner_wrap .sm_area_all h3 span {
+        display: block;
+        font-size: .7em;
+    }
+    .slim_modal .sm_content .sm_content_inner_wrap .sm_area_top {
+        background: rgba(30, 30, 30, 0.02);
+    }
+    .slim_modal .sm_content .sm_content_inner_wrap .sm_area_bottom {
+        background: white;
+    }
+    .slim_modal .sm_content .sm_icon_menu {
+        opacity: 1;
+        box-sizing: border-box;
+        position: absolute;
+        top: 40px;
+        background: whitesmoke;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+    .slim_modal .sm_content .sm_icon_menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .slim_modal .sm_content .sm_icon_menu ul li {
+        font-size: 1.1em;
+        height: 3em;
+        line-height: 3em;
+        background: #e6e6e6;
+        padding: 0px 8px 0px 8px;
+        margin-bottom: 1px;
+        color: rgba(30, 30, 30, 0.4);
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+    }
+    .slim_modal .sm_content .sm_icon_menu ul li.sm_close {
+        background: #ffffff;
+    }
+    .slim_modal .sm_content .sm_icon_menu ul li:nth-child(2) {
+        margin-top: 10px;
+    }
+    .slim_modal .sm_content .sm_icon_menu ul li:hover {
+        background: #ffffff;
+        color: rgba(30, 30, 30, 0.7);
+    }
+
+    .slim_modal .sm_content .sm_icon_menu.is_right {
+        right: 0px;
+        border-radius: 0px 4px 4px 0px;
+        -webkit-border-radius: 0px 4px 4px 0px;
+        -moz-border-radius: 0px 4px 4px 0px;
+        -ms-border-radius: 0px 4px 4px 0px;
+        -o-border-radius: 0px 4px 4px 0px;
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content .sm_icon_menu.is_right {
+            top: 70px;
+            right: 0px;
+            z-index: 9;
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            padding: 1px;
+            border: none;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content .sm_icon_menu.is_right {
+            top: 70px;
+            right: 0px;
+            z-index: 9;
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            padding: 1px;
+            border: none;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content .sm_icon_menu.is_right {
+            top: 15px;
+            right: 15px;
+            z-index: 1;
+            -webkit-box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            -moz-box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            border: 1px solid rgba(30, 30, 30, 0.1);
+            border-left: none;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content .sm_icon_menu.is_right {
+            top: 15px;
+            right: 15px;
+            z-index: 1;
+            -webkit-box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            -moz-box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            border: 1px solid rgba(30, 30, 30, 0.1);
+            border-left: none;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content .sm_icon_menu.is_right {
+            top: 15px;
+            right: 15px;
+            z-index: 1;
+            -webkit-box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            -moz-box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            box-shadow: 15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            border: 1px solid rgba(30, 30, 30, 0.1);
+            border-left: none;
+        }
+    }
+    .slim_modal .sm_content .sm_icon_menu.is_left {
+        border-radius: 4px 0px 0px 4px;
+        -webkit-border-radius: 4px 0px 0px 4px;
+        -moz-border-radius: 4px 0px 0px 4px;
+        -ms-border-radius: 4px 0px 0px 4px;
+        -o-border-radius: 4px 0px 0px 4px;
+
+
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content .sm_icon_menu.is_left {
+            top: 70px;
+            left: 0px;
+            z-index: 9;
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            padding: 1px;
+            border: none;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content .sm_icon_menu.is_left {
+            top: 70px;
+            left: 0px;
+            z-index: 9;
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0);
+            padding: 1px;
+            border: none;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content .sm_icon_menu.is_left {
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+            -webkit-box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            -moz-box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            border: 1px solid rgba(30, 30, 30, 0.1);
+            border-right: none;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content .sm_icon_menu.is_left {
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+            -webkit-box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            -moz-box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            border: 1px solid rgba(30, 30, 30, 0.1);
+            border-right: none;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content .sm_icon_menu.is_left {
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+            -webkit-box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            -moz-box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            box-shadow: -15px 0px 30px 0px rgba(30, 30, 30, 0.2);
+            border: 1px solid rgba(30, 30, 30, 0.1);
+            border-right: none;
+        }
+    }
+    .slim_modal .sm_content .sm_header {
+        box-sizing: border-box;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        color: rgba(30, 30, 30, 0.7);
+        text-transform: uppercase;
+        margin: 0 auto;
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content .sm_header {
+            position: relative;
+            width: 100%;
+            background: #e6e6e6;
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+            padding-top: 0;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content .sm_header {
+            position: relative;
+            width: 100%;
+            background: #e6e6e6;
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+            padding-top: 0;
+        }
+    }
+
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content .sm_header {
+            position: absolute;
+            width: 90%;
+            background: whitesmoke;
+            border-radius: 4px 4px 0px 0px;
+            -webkit-border-radius: 4px 4px 0px 0px;
+            -moz-border-radius: 4px 4px 0px 0px;
+            -ms-border-radius: 4px 4px 0px 0px;
+            -o-border-radius: 4px 4px 0px 0px;
+            padding-top: 7.5px;
+            text-align: center;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content .sm_header {
+            position: absolute;
+            width: 90%;
+            background: whitesmoke;
+            border-radius: 4px 4px 0px 0px;
+            -webkit-border-radius: 4px 4px 0px 0px;
+            -moz-border-radius: 4px 4px 0px 0px;
+            -ms-border-radius: 4px 4px 0px 0px;
+            -o-border-radius: 4px 4px 0px 0px;
+            padding-top: 7.5px;
+            text-align: center;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content .sm_header {
+            position: absolute;
+            width: 90%;
+            background: whitesmoke;
+            border-radius: 4px 4px 0px 0px;
+            -webkit-border-radius: 4px 4px 0px 0px;
+            -moz-border-radius: 4px 4px 0px 0px;
+            -ms-border-radius: 4px 4px 0px 0px;
+            -o-border-radius: 4px 4px 0px 0px;
+            padding-top: 7.5px;
+            text-align: center;
+        }
+    }
+    .slim_modal .sm_content.pushup {
+        -moz-transform: scale(0.98) translateY(20px);
+        -o-transform: scale(0.98) translateY(20px);
+        -ms-transform: scale(0.98) translateY(20px);
+        -webkit-transform: scale(0.98) translateY(20px);
+        transform: scale(0.98) translateY(20px);
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0.4);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0.4);
+        box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0.4);
+        opacity: 0;
+    }
+    .slim_modal .sm_content.pushup.show {
+        -webkit-box-shadow: 0px 20px 80px 0px rgba(30, 30, 30, 0.4);
+        -moz-box-shadow: 0px 20px 80px 0px rgba(30, 30, 30, 0.4);
+        box-shadow: 0px 20px 80px 0px rgba(30, 30, 30, 0.4);
+        opacity: 1;
+    }
+    .slim_modal .sm_content.pushdown {
+        -moz-transform: scale(0.98) translateY(-20px);
+        -o-transform: scale(0.98) translateY(-20px);
+        -ms-transform: scale(0.98) translateY(-20px);
+        -webkit-transform: scale(0.98) translateY(-20px);
+        transform: scale(0.98) translateY(-20px);
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0.4);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0.4);
+        box-shadow: 0px 0px 0px 0px rgba(30, 30, 30, 0.4);
+        opacity: 0;
+    }
+    .slim_modal .sm_content.pushdown.show {
+        -webkit-box-shadow: 0px -20px 80px 0px rgba(30, 30, 30, 0.4);
+        -moz-box-shadow: 0px -20px 80px 0px rgba(30, 30, 30, 0.4);
+        box-shadow: 0px -20px 80px 0px rgba(30, 30, 30, 0.4);
+        opacity: 1;
+    }
+    .slim_modal .sm_content.show {
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+    .slim_modal .sm_content.show .sm_icon_menu {
+        -webkit-transition: all 0.5s ease 0.06s;
+        -moz-transition: all 0.5s ease 0.06s;
+        -ms-transition: all 0.5s ease 0.06s;
+        -o-transition: all 0.5s ease 0.06s;
+        transition: all 0.5s ease 0.06s;
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_right {
+            top: 70px;
+            right: 0px;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_right {
+            top: 70px;
+            right: 0px;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_right {
+            top: 15px;
+            right: -25px;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_right {
+            top: 15px;
+            right: -25px;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_right {
+            top: 15px;
+            right: -25px;
+        }
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_left {
+            top: 70px;
+            left: 0px;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_left {
+            top: 70px;
+            left: 0px;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_left {
+            top: 15px;
+            left: -25px;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_left {
+            top: 15px;
+            left: -25px;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content.show .sm_icon_menu.is_left {
+            top: 15px;
+            left: -25px;
+        }
+    }
+    .slim_modal .sm_content.show .sm_header {
+        -webkit-transition: top 0.5s ease 0.1s;
+        -moz-transition: top 0.5s ease 0.1s;
+        -ms-transition: top 0.5s ease 0.1s;
+        -o-transition: top 0.5s ease 0.1s;
+        transition: top 0.5s ease 0.1s;
+        opacity: 1;
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content.show .sm_header {
+            top: 0px;
+            z-index: 9;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content.show .sm_header {
+            top: 0px;
+            z-index: 9;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content.show .sm_header {
+            top: -40px;
+            z-index: 1;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content.show .sm_header {
+            top: -40px;
+            z-index: 1;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content.show .sm_header {
+            top: -40px;
+            z-index: 1;
+        }
+    }
+    .slim_modal .sm_content.show .sm_header.detached {
+        -webkit-transition: opacity 0.5s ease 0.1s;
+        -moz-transition: opacity 0.5s ease 0.1s;
+        -ms-transition: opacity 0.5s ease 0.1s;
+        -o-transition: opacity 0.5s ease 0.1s;
+        transition: opacity 0.5s ease 0.1s;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        background: rgba(0, 0, 0, 0.9);
+        color: rgba(255, 255, 255, 0.8);
+    }
+    @media only screen and (min-width: 320px) {
+        .slim_modal .sm_content.show .sm_header.detached {
+            top: 0px;
+            z-index: 9;
+        }
+    }
+    @media only screen and (min-width: 414px) {
+        .slim_modal .sm_content.show .sm_header.detached {
+            top: 0px;
+            z-index: 9;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .slim_modal .sm_content.show .sm_header.detached {
+            top: -60px;
+            padding-top: 0;
+            z-index: 1;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .slim_modal .sm_content.show .sm_header.detached {
+            top: -60px;
+            padding-top: 0;
+            z-index: 1;
+        }
+    }
+    @media only screen and (min-width: 1401px) {
+        .slim_modal .sm_content.show .sm_header.detached {
+            top: -60px;
+            padding-top: 0;
+            z-index: 1;
+        }
+    }
+
+    .sm_content.red {
+        background: #EF798A;
+    }
+    .sm_content.red .sm_header {
+        background: #EF798A;
+        color: #ffffff;
+    }
+    .sm_content.tan {
+        background: #E1D59A;
+    }
+    .sm_content.tan .sm_header {
+        background: #E1D59A;
+        color: #ffffff;
+    }
+    .sm_content.green {
+        background: #a9cd99;
+    }
+    .sm_content.green .sm_header {
+        background: #a9cd99;
+        color: #ffffff;
+    }
+
+
+</style>
+
+
+
+    <style>
+
+       aside {
+           background-color: #34495E;
+           display: inline-block;
+           height: 100vh;
+           position: fixed;
+           width: 20%;
+       }
+       aside header {
+           box-sizing: border-box;
+           background-color: #2DCC70;
+           height: 80px;
+           padding: 0 15px;
+       }
+       aside header img,
+       aside header p {
+           display: inline-block;
+           vertical-align: middle;
+       }
+       aside header img {
+           border-radius: 50%;
+       }
+       aside header p {
+           font-size: 13px;
+           color: white;
+           margin-left: 10px;
+           text-transform: uppercase;
+       }
+       aside header > div {
+           position: relative;
+           top: 50%;
+           -webkit-transform: translateY(-50%);
+           transform: translateY(-50%);
+       }
+       aside .profile-picture {
+           height: 55px;
+           width: 55px;
+       }
+       .side-navigation {
+           font-size: 14px;
+       }
+       .side-navigation a {
+           color: #92A1A2;
+           display: block;
+           padding: 15px 25px;
+           text-decoration: none;
+           text-transform: uppercase;
+       }
+       .side-navigation i.fa {
+           color: #92A1A2;
+           font-size: 20px;
+           margin-right: 20px;
+       }
+       .side-navigation li.active a,
+       .side-navigation li:hover a {
+           background-color: #233342;
+           color: white;
+       }
+       .side-navigation li.active i,
+       .side-navigation li:hover i {
+           color: #2DCC70;
+       }
+       main {
+           float: right;
+           vertical-align: top;
+           width: 80%;
+       }
+       .main-head {
+           *zoom: 1;
+           height: 80px;
+           border-bottom: 1px solid #92A1A2;
+           color: #92A1A2;
+           font-size: 20px;
+           padding: 0 20px;
+           position: relative;
+       }
+       .main-head:before,
+       .main-head:after {
+           content: "";
+           display: table;
+       }
+       .main-head:after {
+           clear: both;
+       }
+       .main-head .icons {
+           float: left;
+           font-size: 21px;
+       }
+       .main-head .icons .fa {
+           position: relative;
+       }
+       .main-head .icons .fa + .fa {
+           margin-left: 20px;
+       }
+       .main-head .logo {
+           left: 50%;
+           position: absolute;
+           top: 50%;
+           -webkit-transform: translateX(-50%) translateY(-50%);
+           transform: translateX(-50%) translateY(-50%);
+       }
+       .main-head .logo .fa {
+           color: #2DCC70;
+           font-size: 40px;
+       }
+       .main-head .icons,
+       .main-head .search {
+           position: relative;
+           top: 50%;
+           -webkit-transform: translateY(-50%);
+           transform: translateY(-50%);
+       }
+       .search {
+           float: right;
+       }
+       .search input {
+           border: 0;
+           border-bottom: 1px solid transparent;
+           font-size: 13px;
+           margin-right: 10px;
+           outline: none;
+           padding-bottom: 3px;
+       }
+       .search input:hover,
+       .search input:focus {
+           border-bottom: 1px solid #92A1A2;
+       }
+       .user-card {
+           display: inline-block;
+       }
+       .user-card figure {
+           display: inline-block;
+       }
+       .user-card figure img {
+           border-radius: 50%;
+           vertical-align: middle;
+           width: 110px;
+       }
+       .user-card .name {
+           font-weight: bold;
+           font-size: 24px;
+           text-transform: uppercase;
+       }
+       .user-card .user-role,
+       .user-card .experience-points {
+           color: #92A1A2;
+           font-size: 16px;
+       }
+       .user-card .experience-points .fa {
+           display: inline-block;
+           margin-right: 8px;
+       }
+       .user-card .experience-points .fa:hover {
+           color: #92A1A2;
+           cursor: default;
+       }
+       .user-card .user-info {
+           display: inline-block;
+           margin-left: 15px;
+           vertical-align: middle;
+       }
+       .user-card .user-info span {
+           padding-right: 10px;
+       }
+       .user-card .user-info .fa-star {
+           font-size: 18px;
+           margin: 0 1px;
+           position: relative;
+           top: -1px;
+       }
+       .user-card .user-info .fa-star.on {
+           color: #E54239;
+       }
+       .user-card .user-info .fa-star.off {
+           color: #92A1A2;
+       }
+       .user-card .user-role {
+           margin: 9px 0;
+       }
+       .user-card .user-role a {
+           color: #59A4E8;
+           margin-left: 11px;
+           text-decoration: none;
+       }
+       .action-links {
+           float: right;
+           margin-top: 22px;
+       }
+       .action-links a {
+           border: 1px solid #92A1A2;
+           color: #92A1A2;
+           border-radius: 50%;
+           display: block;
+           padding: 10px;
+           position: relative;
+       }
+       .action-links a:hover {
+           background-color: #2DCC70;
+           border-color: #2DCC70;
+       }
+       .action-links a:hover .fa {
+           color: white;
+       }
+       .action-links a:before,
+       .action-links a:after {
+           left: 50%;
+           opacity: 0;
+           position: absolute;
+           -webkit-transform: translateX(-50%);
+           transform: translateX(-50%);
+           transition: all 0.2s ease;
+           visibility: hidden;
+       }
+       .action-links a:before {
+           background-color: black;
+           border-radius: 3px;
+           color: white;
+           content: attr(data-title);
+           font-size: 12px;
+           padding: 5px;
+           text-decoration: none;
+           top: -35px;
+           width: 80px;
+       }
+       .action-links a:after {
+           border-bottom: 6px solid transparent;
+           border-right: 6px solid transparent;
+           border-left: 6px solid transparent;
+           border-top: 6px solid black;
+           content: "";
+           top: -13px;
+       }
+       .action-links a:hover:before,
+       .action-links a:hover:after {
+           opacity: 1;
+           visibility: visible;
+       }
+       .action-links li {
+           display: inline-block;
+           text-align: center;
+       }
+       .action-links li + li {
+           margin-left: 15px;
+       }
+       .action-links .fa {
+           display: inline-block;
+           height: 20px;
+           font-size: 19px;
+           width: 20px;
+       }
+       .category-navigation {
+           border-bottom: 1px solid #92A1A2;
+           padding: 30px 30px 0;
+       }
+       .category-navigation a {
+           box-sizing: border-box;
+           color: #2B3A4F;
+           display: block;
+           font-weight: bold;
+           font-size: 14px;
+           padding: 6px 0 12px;
+           text-decoration: none;
+           text-transform: uppercase;
+       }
+       .category-navigation li {
+           display: inline-block;
+       }
+       .category-navigation li + li {
+           margin-left: 25px;
+       }
+       .category-navigation li.active a,
+       .category-navigation li:hover a {
+           border-bottom: 4px solid #2DCC70;
+       }
+       .category-navigation.container {
+           padding-bottom: 0;
+           padding-top: 10px;
+       }
+       .card {
+           display: inline-block;
+           width: 30%;
+           vertical-align: top;
+       }
+       .card li {
+           box-sizing: border-box;
+           color: #92A1A2;
+           cursor: pointer;
+           font-size: 13px;
+           padding: 15px 16px;
+           position: relative;
+       }
+       .card li .icon {
+           position: absolute;
+           left: 10px;
+       }
+       .card li + li {
+           border-top: 1px solid #92A1A2;
+       }
+       .card li:before {
+           content: "";
+           height: 100%;
+           left: -1px;
+           opacity: 0;
+           position: absolute;
+           top: 0;
+           width: 4px;
+       }
+       .card li:hover {
+           background-color: #ECF0F1;
+           color: #2B3A4F;
+       }
+       .card li:hover:before {
+           opacity: 1;
+       }
+       .card .hidden-content {
+           border-top: 1px solid #92A1A2;
+       }
+       .card .show-more {
+           border-top: 1px solid #92A1A2;
+           color: #2B3A4F;
+           font-size: 12px;
+           padding: 8px 15px;
+           text-align: right;
+       }
+       .card .show-more .fa {
+           font-size: 12px;
+           margin-left: 5px;
+       }
+       .card .show-more:before {
+           content: none;
+       }
+       .card .tabs {
+           position: relative;
+       }
+       .card .tabs li {
+           background: transparent;
+           border: 0;
+           border-radius: 3px 3px 0 0;
+           box-sizing: border-box;
+           color: #92A1A2;
+           cursor: pointer;
+           display: inline-block;
+           font-size: 12px;
+           padding: 10px;
+           text-align: center;
+           text-transform: uppercase;
+           width: 50%;
+       }
+       .card .tabs li span {
+           display: block;
+           font-size: 34px;
+           font-weight: bold;
+           margin-bottom: 5px;
+       }
+       .card .tabs li.active {
+           background-color: white;
+           border: 1px solid #92A1A2;
+           border-bottom: 0;
+       }
+       .card + .card {
+           margin-left: 5%;
+       }
+       .card.green .content li:before {
+           background-color: #2DCC70;
+       }
+       .card.green .tabs li.active {
+           color: #2DCC70;
+       }
+       .card.orange .content li:before {
+           background-color: #E54239;
+       }
+       .card.orange .tabs li.active {
+           color: #E54239;
+       }
+       .card.purple .content li:before {
+           background-color: #8F40B3;
+       }
+       .card.purple .tabs li.active {
+           color: #8F40B3;
+       }
+       .content {
+           background-color: white;
+           border: 1px solid #92A1A2;
+           border-radius: 0 0 3px 3px;
+           box-sizing: border-box;
+           display: none;
+           margin-top: -1px;
+           overflow: hidden;
+       }
+       .content .has-icon li:not(.show-more) {
+           padding: 15px 16px 15px 43px;
+       }
+       .content .fa {
+           font-size: 14px;
+           line-height: 0;
+           padding-right: 3px;
+       }
+       .content.visible {
+           display: block;
+       }
+       .card.card-full {
+           margin-left: 0;
+           margin-top: 5%;
+           width: 100%;
+       }
+       .card.card-full .content {
+           display: inline-block;
+           height: 280px;
+           margin-top: 0;
+           overflow: visible;
+       }
+       .card.card-full .content.activity {
+           border-radius: 0 0 3px 0;
+       }
+       .card.card-full .content.experience-graphs {
+           border-right: 0;
+           border-radius: 0 0 0 3px;
+       }
+       .graph {
+           bottom: 0;
+           height: 100%;
+           left: 10px;
+           position: absolute;
+           text-align: center;
+           width: 25px;
+       }
+       .graph .bar {
+           font-size: 10px;
+           left: 50%;
+           position: absolute;
+           -webkit-transform: translateX(-50%);
+           transform: translateX(-50%);
+       }
+       .graph .value {
+           background: #2DCC70;
+           bottom: 0;
+           display: inline-block;
+           height: 40.6px;
+           left: 0;
+           position: absolute;
+           width: 100%;
+       }
+       .graph:before {
+           background-color: #000;
+           content: "";
+           bottom: 0;
+           position: absolute;
+           width: 50px;
+       }
+       .container {
+           background-color: #ECF0F1;
+           padding: 15px;
+       }
+       .container.user {
+           background-color: white;
+       }
+       h3 {
+           color: #92A1A2;
+           font-size: 15px;
+           margin: 0 0 15px;
+       }
+       .fa:not(.fa-star):hover {
+           color: #2DCC70;
+           cursor: pointer;
+       }
+       .number-alert {
+           background-color: #E54239;
+           border-radius: 50%;
+           box-sizing: border-box;
+           color: white;
+           display: inline-block;
+           font-family: "Tahoma";
+           font-size: 9px;
+           height: 15px;
+           padding: 3px 0;
+           position: absolute;
+           right: -25%;
+           text-align: center;
+           top: -25%;
+           width: 15px;
+       }
+
+       footer {
+           *zoom: 1;
+           bottom: 0;
+           padding: 0 15px;
+           position: fixed;
+           right: 0;
+           text-align: right;
+           width: 100%;
+       }
+       footer:before,
+       footer:after {
+           content: "";
+           display: table;
+       }
+       footer:after {
+           clear: both;
+       }
+       footer .item {
+           display: inline-block;
+           color: #2B3A4F;
+           font-size: 10px;
+           text-decoration: none;
+           vertical-align: middle;
+       }
+       footer .item + .item {
+           margin-left: 10px;
+       }
+       footer .link {
+           width: 32px;
+       }
+       footer img {
+           width: 100%;
+       }
+       ul {
+           padding-left: 0;
+       }
+       li {
+           list-style: none;
+       }
+       p {
+           margin: 0;
+       }
+
+   </style>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Junge);
+
+        #scroll {
+
+            height: 300px;
+            border: 1px solid #ddd;
+            width: 60%;
+            overflow: auto;
+
+        }
+
+
+        .panel-css {
+
+
+           list-style: none;
+           background-color: rgba(0, 0, 0, 0.05);
+           background-image:
+                   linear-gradient(
+                           90deg,
+                           #2DCC70 10px,
+                           #EEE 10px,
+                           #EEE 11px,
+                           transparent 11px);
+           padding: 10px 15px 10px 25px;
+           border: 1px solid #CCC;
+           box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+           margin-bottom: 5px;
+           width: 90%;
+           box-sizing: border-box;
+           cursor: pointer;
+           border-radius: 3px;
+        }
+
+
+        #notebooks span {
+            display: block;
+            position: absolute;
+            background: #2DCC70;
+            bottom: -35px;
+            left: -1px;
+            width: 360px;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #notebooks select {
+            width: 120px;
+            margin-left: 230px;
+            margin-top: -45px;
+            border-radius: 0 3px 3px 0;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            position: absolute;
+            padding: 7.5px;
+            box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        #notebooks select:focus, #query:focus {
+            border: 1px solid #2DCC70;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+            outline: none;
+        }</style>
+    <style>
+        .editb {
+            border-radius: 50%;
+            padding: 7px 11px 7px 11px;
+            outline: none;
+            background: gray;
+            border: 1px solid darkgray;
+            color: white;
+            transition: 0.5s linear;
+        }
+
+        .editb:hover {
+            background: darkgray;
+        }
+
+        /* delete button*/
+
+
+        /* yes delete button*/
+
+
+
+        h3 span {
+            color: #fa3380;
+        }
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+
+        .alert h4 {
+            margin: 0
+        }
+
+
+
+        .tab_grid_prof {
+            padding: 1em;
+            background: #fffdfd;
+            padding: 1em;
+            border: 1px solid rgba(221, 221, 221, 0.74);
+        }
+        .tab_grid_prof:nth-child(2),
+        .tab_grid_prof:nth-child(4) {
+            margin: 2em 0;
+        }
+
+        .tab_grid_prof:nth-child(5) {
+            margin: 0em 0 2em 0;
+        }
+
+        /* edit buttons */
+
+        #save-edit-btn {
+            border-radius: 100px;
+            outline: none;
+        }
+
+        #save-close-btn {
+            border-radius: 100px;
+            background: #0F9E5E;
+            color: #fff;
+            outline: none;
+        }
+
+
+
+        /*  FOLLOW*/
+
+
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- header -->
+
+<aside>
+    <header>
+        <div><img class="profile-picture" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_10.png"/>
+            <p>{{ app.user.username }}</p>
+        </div>
+    </header>
+    <nav class="side-navigation">
+        <ul>
+            <li class="active"><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#" id="about"><i class="fa fa-star"></i>About Me</a></li>
+            <li><a href="#" id="contracts"><i class="fa fa-star"></i>Contracts</a></li>
+            <li><a href="#"><i class="fa fa-comments"></i>Reclamations</a></li>
+            <li><a href="#"><i class="fa fa-area-chart"></i>Devis</a></li>
+        </ul>
+    </nav>
+</aside>
+<main>
+    <header class="main-head">
+        <div class="icons"><i class="fa fa-user-md"></i><i class="fa fa-comments-o"></i><i class="fa fa-bell-o"><span class="number-alert">3</span></i></div>
+        <div class="logo"><i class="fa fa-rocket"></i></div>
+        <div class="search">
+            <input type="text" name="search" placeholder="Type here to search..." autocomplete="off"/><i class="fa fa-search"></i>
+        </div>
+    </header>
+
+    <div class="container user">
+        <div class="user-card">
+            <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_10.png"/></figure>
+            <div class="user-info">
+                <div class="name"> <span>{{ app.user.username }}</span><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+                <div class="user-role">
+                    Student &#8226;<a href="#">Learn more</a>
+                </div>
+                <div class="experience-points"><i class="fa fa-coffee"></i>8,977 exp</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content-->
+    <div class="wrapper" id="wrap_about">
+        <ul class="category-navigation">
+            <li class="active"><a href="#" id="driver">Driver</a></li>
+            <li><a href="#" id="vehicule">Vehicule</a></li>
+
+        </ul>
+        <div id="drivers" class="container" >
+
+            <a  data-target="#addModal" data-toggle="modal" class="btn btn-primary a-btn-slide-text">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span><strong>Add Vehicule</strong></span>
+            </a>
+            <a onclick="showinputs()" class="btn btn-primary a-btn-slide-text">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Edit Profile</strong></span>
+            </a>
+            <table style="width: 50%;margin: 3em;">
+            <form method="post">
+                <tr><td>Username</td><td><input  type="text" id="usr" name="usr" value="{{ app.user.username }}" disabled></td></tr>
+                <tr><td>Email</td><td><input type="email" id="email" name="email1" value="{{ app.user.email }}" disabled></td></tr>
+                <tr><td>Address</td><td><input type="text" id="address" name="address1" value="{{ app.user.addresse }}" disabled></td></tr>
+                <tr><td>Cin</td><td><input type="number" id="cin" name="cin1" value="{{ app.user.cin }}" disabled ></td></tr>
+                <tr><td>Phone</td><td><input type="number" id="phone" name="phone1" value="{{ app.user.telephone }}" disabled></td></tr>
+                <tr><td></td><td><button id="btn_submit" name="btn_submit" style="display: none" type="submit">Submit</button></td></tr>
+            </form>
+            </table>
+
+
+
+        </div>
+        <div id="vehicules" class="container" style="display: none;">
+            <div id="scroll">
+
+        {% for v in vehicule %}
+<table style="width: 100%;">
+    <tr style="width: 100%;">
+        <td style="width: 70%;">
+            <div id="accordion2" class="panel panel-group panel-css" role="tablist">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
+                        <h4 class="panel-title">
+                            <a class="" role="button" data-toggle="collapse" data-parent="#accordion2" href="#{{ v.id }}" aria-expanded="true" aria-controls="collapseListGroup2"> {{ v.marque }}</a>
+                        </h4>
+                    </div>
+                    <div id="{{ v.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2" aria-expanded="true">
+                        <ul class="list-group">
+                            <li class="list-group-item" style="color: #000;">{{ v.matricule }}</li>
+                            <li class="list-group-item">{{ v.puissanceFiscale }}</li>
+                            <li class="list-group-item">{{ v.dateCirculation|date('Y-m-d') }}</li>
+                            <li class="list-group-item">{{ v.carburant }}</li>
+                            <li class="list-group-item">{{ v.valeurNeuve }}</li>
+                            <li class="list-group-item">{{ v.valeurDeclare }}</li>
+                            <li class="list-group-item">{{ v.valeurMarche }}</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </td>
+        <td style="width: 15%;">
+            <a onclick="datashow({{ v.id }},'{{ v.matricule }}',{{ v.puissanceFiscale }},'{{ v.carburant }}',{{ v.valeurNeuve }})" data-target="#editModal" data-toggle="modal" class="btn btn-primary a-btn-slide-text">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Edit</strong></span>
+            </a>
+        </td>
+        <td style="width: 15%;">
+           <a class="btn btn-primary a-btn-slide-text"  href="{{ path('delete',{'id':v.id}) }}"   > <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+               <span><strong>Delete</strong></span>    </a>
+
+        </td>
+    </tr>
+</table>
+        {% endfor %}
+        </div>
+        </div>
+    </div>
+    <div class="wrapper" id="wrap_contracts">
+
+<div id="contar" class="contracts" style="display: none">
+        <div class="holdmystuff" >
+            <select class="form-control" id="voitures">
+              {% for v in vehicule %}
+                <option value="{{ v.id }}">{{ v.marque }}</option>
+                {% endfor %}
+
+            </select>
+            <div class="holder_svg">
+                <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In  -->
+                <img src="" />
+
+            </div>
+            <h2 id="tit_contrat">Your contract with</h2>
+            <br>
+            <table style="width: 100%; padding: 2px">
+                <tr><td><p id="reference" >Reference: </p></td><td><p id="Datesignature" >Date Signature: </p></td></tr>
+                <tr><td><p id="datedebut" >Reference: </p></td><td><p id="datefin" >Date Signature: </p></td></tr>
+
+            </table>
+            <ul id="garantie">
+                <li><a class="sm_open" data-modal="examplePlain" data-effect="pushdown">Modal (Plain 'Ol Vanilla')</a></li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="slim_modal" id="examplePlain">
+            <div class="sm_content">
+                <div class="sm_content_inner_wrap">
+                    <div class="sm_area_top">
+                        <h3>Example Modal Content
+                            <span>...for this CSS Demo</span>
+                        </h3>
+                    </div>
+                    <div class="sm_area_bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nihil asperiores recusandae odio distinctio earum voluptatibus, quisquam repellendus voluptas quaerat quis est totam, optio quia, molestias voluptatum error libero pariatur!</p>
+                    </div>
+                    <a class="sm_close sm_close_button">CLOSE</a>
+                </div>
+            </div>
+        </div>
+        <div class="slim_modal" id="exampleAdvanced">
+            <div class="sm_content">
+                <div class="sm_header">Hi. I'm a Header.</div>
+                <div class="sm_icon_menu">
+                    <ul>
+                        <li class="sm_close"><i class="fa fa-times fa-fw "></i></li>
+                        <li><i class="fa fa-gear fa-fw"></i></li>
+                        <li><i class="fa fa-plus fa-fw"></i></li>
+                        <li><i class="fa fa-sitemap fa-fw"></i></li>
+                        <li><i class="fa fa-user fa-fw"></i></li>
+                    </ul>
+                </div>
+                <div class="sm_content_inner_wrap">
+                    <div class="sm_area_top">
+                        <h3>Example Modal Content
+                            <span>...for this CSS Demo</span>
+                        </h3>
+                    </div>
+                    <div class="sm_area_bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nihil asperiores recusandae odio distinctio earum voluptatibus, quisquam repellendus voluptas quaerat quis est totam, optio quia, molestias voluptatum error libero pariatur!</p>
+                    </div>
+                    <div class="sm_close sm_close_button">CLOSE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slim_modal" id="exampleData">
+            <div class="sm_content">
+                <div class="sm_header"></div>
+                <div class="sm_icon_menu is_right">
+                    <ul>
+                        <li class="sm_close"><i class="fa fa-times fa-fw "></i></li>
+                    </ul>
+                </div>
+                <div class="sm_content_inner_wrap">
+                    <div class="sm_area_all"></div>
+                    <a class="sm_close sm_close_button">CLOSE</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+</main>
+<!-- list  -->
+<div class="modal fade" id="editModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form class="form-horizontal" method="post">
+
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">X</button>
+                    <h4 class="modal-title">Edit Data</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container"  style="width: 100%;background-color: whitesmoke">
+
+                            <input type="hidden" id="id_driver" name="idvehicule" value="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="Name">Valeur Neuve</label>
+                                <div class="col-sm-3" style="width: 50%">
+                                    <input class="form-control" id="valeur" name="valeur" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="full name">Matricule</label>
+                                <div class="col-sm-3" style="width: 50%">
+                                    <input class="form-control" id="matricule"  name="matricule" type="text" ng-model="clickedUser.fullname" style="width: 100%"/>
+                                </div>
+                            </div>
+                            <div class="form-group"  >
+                                <label class="control-label col-sm-2" for="text">Carburant</label>
+                                <div class="col-sm-3" style="width: 50%">
+                                    <input class="form-control" id="carburant" name="carburant" type="text" style="width: 100%" ng-model="clickedUser.email"/>
+                                </div>
+                            </div>
+                            <div class="form-group"  >
+                                <label class="control-label col-sm-2" for="text">Puissance</label>
+                                <div class="col-sm-3" style="width: 50%">
+                                    <input class="form-control" name="puissance" id="puissance" type="text" style="width: 100%" ng-model="clickedUser.email"/>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" name="editv" class="btn btn-success" id="save-edit-btn">Save</button>
+                    <button class="btn btn-default" id="save-close-btn" type="button" data-dismiss="modal">Close</button>
+
+                </div>
+                    </form>
+            </div>
+
+        </div>
+</div>
+
+<div class="modal fade" id="addModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form class="form-horizontal" method="post">
+
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">X</button>
+                    <h4 class="modal-title">Edit Data</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container"  style="width: 100%;background-color: whitesmoke">
+
+                        <input type="hidden" id="id_driver" name="idvehicule" value="">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Marque</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="marque" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Matricule</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="matricule" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Puissance</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="puissance" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Nombre Place</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="nbplace" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Date Circulation</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="date_circulation" type="date" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Carburant</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="carburant" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Valeur Declaré</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="valeur_dec" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Name">Valeur Neuve</label>
+                            <div class="col-sm-3" style="width: 50%">
+                                <input class="form-control"  name="valeur_neuv" type="text" style="width: 100%" ng-model="clickedUser.name"/>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" name="add" class="btn btn-success" id="save-edit-btn">add</button>
+                    <button class="btn btn-default" id="save-close-btn" type="button" data-dismiss="modal">Close</button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- //footer -->
+<script>
+        document.getElementById("driver").onclick = function() {myFunction()};
+        document.getElementById("vehicule").onclick = function() {myFunction2()};
+
+    function myFunction() {
+        document.getElementById("vehicules").style.display = "none";
+        document.getElementById("drivers").style.display = "block";
+    }
+    function myFunction2() {
+        document.getElementById("drivers").style.display = "none";
+        document.getElementById("vehicules").style.display = "block";
+
+    }
+
+        document.getElementById("about").onclick = function() {myFunction4()};
+        document.getElementById("contracts").onclick = function() {myFunction3()};
+
+    function myFunction3() {
+
+        document.getElementById("wrap_about").style.display = "none";
+        document.getElementById("wrap_contracts").style.display = "block";
+        document.getElementById("contar").style.display = "block";
+
+    }
+    function myFunction4() {
+        document.getElementById("wrap_contracts").style.display = "none";
+        document.getElementById("contar").style.display = "none";
+        document.getElementById("wrap_about").style.display = "block";
+
+    }
+
+    function datashow(id,matricule,puissance,carburant,valeur)
+    {
+
+        document.getElementById("id_driver").value= id;
+        document.getElementById("matricule").value = matricule;
+        document.getElementById("puissance").value= puissance;
+        document.getElementById("carburant").value= carburant;
+        document.getElementById("valeur").value = valeur;
+
+    }
+
+    function showinputs()
+    {
+        alert('test');
+        document.getElementById("btn_submit").style.display = 'block';
+        document.getElementById("usr").disabled =false;
+        document.getElementById("email").disabled =false;
+        document.getElementById("phone").disabled =false;
+        document.getElementById("address").disabled =false;
+        document.getElementById("cin").disabled =false;
+
+    }
+
+</script>
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js-account/easyResponsiveTabs.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+
+<!-- light-case -->
+<script src="{{ asset('js-account/lightcase.js') }}"></script>
+<script src="{{ asset('js/jquery.events.touch.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        //when a group is shown, save it as the active accordion group
+        $(".panel").on('shown.bs.collapse', function () {
+            var active = $(".accordion .in").attr('id');
+            Cookies.set('activeAccordionGroup', active, { expires: 7 });
+            alert(active);
+        });
+        $(".panel").on('hidden.bs.collapse', function () {
+            Cookies.remove('activeAccordionGroup');
+        });
+        var last = Cookies.get('activeAccordionGroup');
+        if (last != null) {
+            //remove default collapse settings
+            $(".panel .collapse").removeClass('in');
+            //show the account_last visible group
+            $("#" + last).addClass("in");
+        }
+    });
+
+</script>
+<script>
+
+
+    $(function() {
+
+
+        $('#scroll').animate({
+            scrollTop: $('#scroll')[ 0].scrollHeight
+        }, 'slow');
+
+
+                });
+
+</script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script>
+<script>
+    $('.showcase').lightcase();
+</script>
+<script>
+    $(document).ready( function () {
+        $('table').DataTable();
+    } );
+</script>
+<script>
+    $(document).ready(function() {
+
+        $('.sm_open').on('click', function(){
+            var modal = $(this).attr('data-modal');
+            var modaloverlaycolor = $(this).attr('data-overlay');
+            var modaleffect = $(this).attr('data-effect');
+            var modalheader = $(this).attr('data-header');
+            var modalheadertype = $(this).attr('data-header-type');
+            var modalcontent = $(this).attr('data-content');
+            var modaliconside = $(this).attr('data-icons');
+            var modalwrappercolor = $(this).attr('data-wrapper-color');
+
+            $('#' + modal).addClass(modaloverlaycolor);
+            $('#' + modal + ' .sm_content').addClass(modaleffect);
+            $('#' + modal + ' .sm_content .sm_header').html(modalheader);
+            $('#' + modal + ' .sm_content .sm_header').addClass(modalheadertype);
+            $('#' + modal + ' .sm_content .sm_area_all').html(modalcontent);
+            $('#' + modal + ' .sm_icon_menu').addClass(modaliconside);
+            $('#' + modal + ' .sm_content').addClass(modalwrappercolor);
+            $('#' + modal).fadeIn().css("display", "flex");
+            setTimeout(function(){
+                $('#'+modal + ' .sm_content').addClass('show');
+            }, 400);
+        });
+
+        $('.sm_close').on('click', function(){
+            var $modal = $(this).parents('.slim_modal');
+            closeModal($modal);
+        });
+
+        $('.slim_modal').on('click', function(e) {
+            if (e.target !== this)
+                return;
+            var $modal = $(this);
+            closeModal($modal);
+        });
+
+        function closeModal($modal) {
+            $modal.find('.sm_content').removeClass('show');
+            setTimeout(function(){
+                $modal.removeClass('red green tan none');
+                $modal.find('.sm_content').removeClass('red green tan');
+                $modal.find('.sm_icon_menu').removeClass('is_right is_left');
+                $modal.find('.sm_header').removeClass('detached');
+                $modal.fadeOut();
+            }, 400);
+        }
+    });
+</script>
+<script>
+
+    $("#voitures").change(
+        function(){
+            var serie=$('#voitures').val();
+            DATA =  {'serie' : serie};
+            $.ajax({
+                type: "POST",
+                url: "{{ path('account')}}",
+                data:DATA,
+                success: function (data) {
+
+                    $.each(data,function(i,ele)
+                    {
+                        $('#tit_contrat').text("Your Contract With "+ele.nomAgence+" Assurance");
+                        $('#reference').text("Reference: "+ele.referenceContrat);
+                        $('#Datesignature').text("Date Signature: "+ele.dateSignature);
+                        $('#datedebut').text("Date Debut: "+ele.dateDebut);
+                        $.each(ele.nomGarantie,function(i,el)
+                        {
+                        $("#garantie").append(
+                            "<li><a class='sm_open' data-modal='examplePlain' data-effect='pushdown'>"+ el +"</a></li>"
+                        );
+                        });
+                        $('#datefin').text("Date Fin: "+ele.dateFin);
+
+                    });
+
+                },
+                error:function ()
+                {
+                    console.log("error");
+                }
+            });
+        });
+
+</script>
+<!-- //light-case -->
+
+</body>
+</html>

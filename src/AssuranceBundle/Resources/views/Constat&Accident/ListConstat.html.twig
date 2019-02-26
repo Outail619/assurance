@@ -1,0 +1,77 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AssuranceBundle:Constat:List{% endblock %}
+
+{% block head %} {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/table.css') }}" />
+
+{% endblock head %}
+
+{% block body %}
+
+<h1>Welcome to the Constat:List page</h1>
+        {% block login %}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">Mon Compte<b class="caret"></b></a>
+                <ul class="dropdown-menu multi-column columns-2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="multi-column-dropdown">
+                                <li><a href="{{ path("list_constat") }}">Déclarer un constat</a></li>
+                                <li><a href="jobs.html">Déclarer un accident</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+        {% endblock login %}
+
+        {% block yes %}
+            <table id="tablePeople" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="item_1" class="item" data-identificator="identificator-1">
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr id="tr_item_1" class="subItem inicialFont">
+                    <td id="description_item_1"colspan="3"></td>
+                </tr>
+
+                <tr id="item_2" class="item" data-identificator="identificator-2">
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr id="tr_item_2" class="subItem inicialFont">
+                    <td id="description_item_2" colspan="3"></td>
+                </tr>
+
+                <tr id="item_3" class="item" data-identificator="identificator-3">
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                </tr>
+                <tr id="tr_item_3" class="subItem inicialFont">
+                    <td id="description_item_3" colspan="3"></td>
+                </tr>
+
+                </tbody>
+
+                <br />
+                <button id="btn-each" type="button" class="btn btn-info"> Each</button>
+            </table>
+        {% endblock yes %}
+
+    {% block js %}{{ parent() }}
+        <script type="text/javascript" src="{{ asset('js/table.js') }}"></script>
+        {% endblock js %}
+
+{% endblock %}

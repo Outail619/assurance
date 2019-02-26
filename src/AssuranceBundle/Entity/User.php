@@ -1,0 +1,395 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace AssuranceBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="AssuranceBundle\Repository\UserRepository")
+ * @ORM\Table(name="user")
+ */
+class User extends BaseUser
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="cin", type="integer")
+     */
+    private $cin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="addresse", type="string", length=255)
+     */
+    private $addresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profession", type="string", length=255)
+     */
+    private $profession;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_naissance", type="string")
+     */
+    private $dateNaissance;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="telephone", type="integer")
+     */
+    private $telephone;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="code_postale", type="integer")
+     */
+    private $codePostale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_cin", type="string", length=255)
+     */
+    private $imageCin;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="EntityBundle\Entity\vehicule", mappedBy="owner" , orphanRemoval=true)
+     */
+    private $vehicules;
+
+    /**
+     * @ORM\Column(name="charge_id", type="string", length=255, nullable=true)
+     */
+    protected $chargeId;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set cin
+     *
+     * @param integer $cin
+     *
+     * @return User
+     */
+    public function setCin($cin)
+    {
+        $this->cin = $cin;
+
+        return $this;
+    }
+
+    /**
+     * Get cin
+     *
+     * @return int
+     */
+    public function getCin()
+    {
+        return $this->cin;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return User
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return User
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set addresse
+     *
+     * @param string $addresse
+     *
+     * @return User
+     */
+    public function setAddresse($addresse)
+    {
+        $this->addresse = $addresse;
+
+        return $this;
+    }
+
+    /**
+     * Get addresse
+     *
+     * @return string
+     */
+    public function getAddresse()
+    {
+        return $this->addresse;
+    }
+
+    /**
+     * Set profession
+     *
+     * @param string $profession
+     *
+     * @return User
+     */
+    public function setProfession($profession)
+    {
+        $this->profession = $profession;
+
+        return $this;
+    }
+
+    /**
+     * Get profession
+     *
+     * @return string
+     */
+    public function getProfession()
+    {
+        return $this->profession;
+    }
+
+    /**
+     * Set dateNaissance
+     *
+     * @param \DateTime $dateNaissance
+     *
+     * @return User
+     */
+    public function setDateNaissance($dateNaissance)
+    {
+        $this->dateNaissance = $dateNaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get dateNaissance
+     *
+     * @return \DateTime
+     */
+    public function getDateNaissance()
+    {
+        return $this->dateNaissance;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param integer $telephone
+     *
+     * @return User
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return int
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set codePostale
+     *
+     * @param integer $codePostale
+     *
+     * @return User
+     */
+    public function setCodePostale($codePostale)
+    {
+        $this->codePostale = $codePostale;
+
+        return $this;
+    }
+
+    /**
+     * Get codePostale
+     *
+     * @return int
+     */
+    public function getCodePostale()
+    {
+        return $this->codePostale;
+    }
+
+    /**
+     * Set imageCin
+     *
+     * @param string $imageCin
+     *
+     * @return User
+     */
+    public function setImageCin($imageCin)
+    {
+        $this->imageCin = $imageCin;
+
+        return $this;
+    }
+
+    /**
+     * Get imageCin
+     *
+     * @return string
+     */
+    public function getImageCin()
+    {
+        return $this->imageCin;
+    }
+
+
+
+
+    /**
+     * Add vehicule
+     *
+     * @param \EntityBundle\Entity\vehicule $vehicule
+     *
+     * @return User
+     */
+    public function addVehicule(\EntityBundle\Entity\vehicule $vehicule)
+    {
+
+            $this->vehicules[] = $vehicule;
+            $vehicule->setOwner($this);
+
+
+        return $this;
+    }
+
+    /**
+     * Remove vehicule
+     *
+     * @param \EntityBundle\Entity\vehicule $vehicule
+     */
+    public function removeVehicule(\EntityBundle\Entity\vehicule $vehicule)
+    {
+        if ($this->vehicules->contains($vehicule)) {
+            $this->vehicules->removeElement($vehicule);
+            // set the owning side to null (unless already changed)
+            if ($vehicule->setOwner() === $this) {
+                $vehicule->setOwner(null);
+            }
+        }
+    }
+
+    /**
+     * Get vehicules
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVehicules()
+    {
+        return $this->vehicules;
+    }
+
+
+
+    /**
+     * Set chargeId.
+     *
+     * @param string|null $chargeId
+     *
+     * @return User
+     */
+    public function setChargeId($chargeId = null)
+    {
+        $this->chargeId = $chargeId;
+
+        return $this;
+    }
+
+    /**
+     * Get chargeId.
+     *
+     * @return string|null
+     */
+    public function getChargeId()
+    {
+        return $this->chargeId;
+    }
+}

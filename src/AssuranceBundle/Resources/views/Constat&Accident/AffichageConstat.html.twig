@@ -1,0 +1,1093 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset ("css/demo.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/font-awesome.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/bootstrap.css") }}" rel="stylesheet">
+    <link href="{{ asset ("css/style.css") }}" rel="stylesheet">
+    <style>
+
+        aside {
+            background-color: #34495E;
+            display: inline-block;
+            height: 100vh;
+            position: fixed;
+            width: 20%;
+        }
+        aside header {
+            box-sizing: border-box;
+            background-color: #2DCC70;
+            height: 80px;
+            padding: 0 15px;
+        }
+        aside header img,
+        aside header p {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        aside header img {
+            border-radius: 50%;
+        }
+        aside header p {
+            font-size: 13px;
+            color: white;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+        aside header > div {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        aside .profile-picture {
+            height: 55px;
+            width: 55px;
+        }
+        .side-navigation {
+            font-size: 14px;
+        }
+        .side-navigation a {
+            color: #92A1A2;
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .side-navigation i.fa {
+            color: #92A1A2;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+        .side-navigation li.active a,
+        .side-navigation li:hover a {
+            background-color: #233342;
+            color: white;
+        }
+        .side-navigation li.active i,
+        .side-navigation li:hover i {
+            color: #2DCC70;
+        }
+        main {
+            float: right;
+            vertical-align: top;
+            width: 80%;
+        }
+        .main-head {
+            *zoom: 1;
+            height: 80px;
+            border-bottom: 1px solid #92A1A2;
+            color: #92A1A2;
+            font-size: 20px;
+            padding: 0 20px;
+            position: relative;
+        }
+        .main-head:before,
+        .main-head:after {
+            content: "";
+            display: table;
+        }
+        .main-head:after {
+            clear: both;
+        }
+        .main-head .icons {
+            float: left;
+            font-size: 21px;
+        }
+        .main-head .icons .fa {
+            position: relative;
+        }
+        .main-head .icons .fa + .fa {
+            margin-left: 20px;
+        }
+        .main-head .logo {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .main-head .logo .fa {
+            color: #2DCC70;
+            font-size: 40px;
+        }
+        .main-head .icons,
+        .main-head .search {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .search {
+            float: right;
+        }
+        .search input {
+            border: 0;
+            border-bottom: 1px solid transparent;
+            font-size: 13px;
+            margin-right: 10px;
+            outline: none;
+            padding-bottom: 3px;
+        }
+        .search input:hover,
+        .search input:focus {
+            border-bottom: 1px solid #92A1A2;
+        }
+        .user-card {
+            display: inline-block;
+        }
+        .user-card figure {
+            display: inline-block;
+        }
+        .user-card figure img {
+            border-radius: 50%;
+            vertical-align: middle;
+            width: 110px;
+        }
+        .user-card .name {
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .user-card .user-role,
+        .user-card .experience-points {
+            color: #92A1A2;
+            font-size: 16px;
+        }
+        .user-card .experience-points .fa {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .user-card .experience-points .fa:hover {
+            color: #92A1A2;
+            cursor: default;
+        }
+        .user-card .user-info {
+            display: inline-block;
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+        .user-card .user-info span {
+            padding-right: 10px;
+        }
+        .user-card .user-info .fa-star {
+            font-size: 18px;
+            margin: 0 1px;
+            position: relative;
+            top: -1px;
+        }
+        .user-card .user-info .fa-star.on {
+            color: #E54239;
+        }
+        .user-card .user-info .fa-star.off {
+            color: #92A1A2;
+        }
+        .user-card .user-role {
+            margin: 9px 0;
+        }
+        .user-card .user-role a {
+            color: #59A4E8;
+            margin-left: 11px;
+            text-decoration: none;
+        }
+        .action-links {
+            float: right;
+            margin-top: 22px;
+        }
+        .action-links a {
+            border: 1px solid #92A1A2;
+            color: #92A1A2;
+            border-radius: 50%;
+            display: block;
+            padding: 10px;
+            position: relative;
+        }
+        .action-links a:hover {
+            background-color: #2DCC70;
+            border-color: #2DCC70;
+        }
+        .action-links a:hover .fa {
+            color: white;
+        }
+        .action-links a:before,
+        .action-links a:after {
+            left: 50%;
+            opacity: 0;
+            position: absolute;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            transition: all 0.2s ease;
+            visibility: hidden;
+        }
+        .action-links a:before {
+            background-color: black;
+            border-radius: 3px;
+            color: white;
+            content: attr(data-title);
+            font-size: 12px;
+            padding: 5px;
+            text-decoration: none;
+            top: -35px;
+            width: 80px;
+        }
+        .action-links a:after {
+            border-bottom: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-left: 6px solid transparent;
+            border-top: 6px solid black;
+            content: "";
+            top: -13px;
+        }
+        .action-links a:hover:before,
+        .action-links a:hover:after {
+            opacity: 1;
+            visibility: visible;
+        }
+        .action-links li {
+            display: inline-block;
+            text-align: center;
+        }
+        .action-links li + li {
+            margin-left: 15px;
+        }
+        .action-links .fa {
+            display: inline-block;
+            height: 20px;
+            font-size: 19px;
+            width: 20px;
+        }
+        .category-navigation {
+            border-bottom: 1px solid #92A1A2;
+            padding: 30px 30px 0;
+        }
+        .category-navigation a {
+            box-sizing: border-box;
+            color: #2B3A4F;
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 6px 0 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .category-navigation li {
+            display: inline-block;
+        }
+        .category-navigation li + li {
+            margin-left: 25px;
+        }
+        .category-navigation li.active a,
+        .category-navigation li:hover a {
+            border-bottom: 4px solid #2DCC70;
+        }
+        .category-navigation.container {
+            padding-bottom: 0;
+            padding-top: 10px;
+        }
+        .card {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+        }
+        .card li {
+            box-sizing: border-box;
+            color: #92A1A2;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 15px 16px;
+            position: relative;
+        }
+        .card li .icon {
+            position: absolute;
+            left: 10px;
+        }
+        .card li + li {
+            border-top: 1px solid #92A1A2;
+        }
+        .card li:before {
+            content: "";
+            height: 100%;
+            left: -1px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 4px;
+        }
+        .card li:hover {
+            background-color: #ECF0F1;
+            color: #2B3A4F;
+        }
+        .card li:hover:before {
+            opacity: 1;
+        }
+        .card .hidden-content {
+            border-top: 1px solid #92A1A2;
+        }
+        .card .show-more {
+            border-top: 1px solid #92A1A2;
+            color: #2B3A4F;
+            font-size: 12px;
+            padding: 8px 15px;
+            text-align: right;
+        }
+        .card .show-more .fa {
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        .card .show-more:before {
+            content: none;
+        }
+        .card .tabs {
+            position: relative;
+        }
+        .card .tabs li {
+            background: transparent;
+            border: 0;
+            border-radius: 3px 3px 0 0;
+            box-sizing: border-box;
+            color: #92A1A2;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 50%;
+        }
+        .card .tabs li span {
+            display: block;
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .card .tabs li.active {
+            background-color: white;
+            border: 1px solid #92A1A2;
+            border-bottom: 0;
+        }
+        .card + .card {
+            margin-left: 5%;
+        }
+        .card.green .content li:before {
+            background-color: #2DCC70;
+        }
+        .card.green .tabs li.active {
+            color: #2DCC70;
+        }
+        .card.orange .content li:before {
+            background-color: #E54239;
+        }
+        .card.orange .tabs li.active {
+            color: #E54239;
+        }
+        .card.purple .content li:before {
+            background-color: #8F40B3;
+        }
+        .card.purple .tabs li.active {
+            color: #8F40B3;
+        }
+        .content {
+            background-color: white;
+            border: 1px solid #92A1A2;
+            border-radius: 0 0 3px 3px;
+            box-sizing: border-box;
+            display: none;
+            margin-top: -1px;
+            overflow: hidden;
+        }
+        .content .has-icon li:not(.show-more) {
+            padding: 15px 16px 15px 43px;
+        }
+        .content .fa {
+            font-size: 14px;
+            line-height: 0;
+            padding-right: 3px;
+        }
+        .content.visible {
+            display: block;
+        }
+        .card.card-full {
+            margin-left: 0;
+            margin-top: 5%;
+            width: 100%;
+        }
+        .card.card-full .content {
+            display: inline-block;
+            height: 280px;
+            margin-top: 0;
+            overflow: visible;
+        }
+        .card.card-full .content.activity {
+            border-radius: 0 0 3px 0;
+        }
+        .card.card-full .content.experience-graphs {
+            border-right: 0;
+            border-radius: 0 0 0 3px;
+        }
+        .graph {
+            bottom: 0;
+            height: 100%;
+            left: 10px;
+            position: absolute;
+            text-align: center;
+            width: 25px;
+        }
+        .graph .bar {
+            font-size: 10px;
+            left: 50%;
+            position: absolute;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        .graph .value {
+            background: #2DCC70;
+            bottom: 0;
+            display: inline-block;
+            height: 40.6px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+        .graph:before {
+            background-color: #000;
+            content: "";
+            bottom: 0;
+            position: absolute;
+            width: 50px;
+        }
+        .container {
+            background-color: #ECF0F1;
+            padding: 15px;
+        }
+        .container.user {
+            background-color: white;
+        }
+        h3 {
+            color: #92A1A2;
+            font-size: 15px;
+            margin: 0 0 15px;
+        }
+        .fa:not(.fa-star):hover {
+            color: #2DCC70;
+            cursor: pointer;
+        }
+        .number-alert {
+            background-color: #E54239;
+            border-radius: 50%;
+            box-sizing: border-box;
+            color: white;
+            display: inline-block;
+            font-family: "Tahoma";
+            font-size: 9px;
+            height: 15px;
+            padding: 3px 0;
+            position: absolute;
+            right: -25%;
+            text-align: center;
+            top: -25%;
+            width: 15px;
+        }
+
+        footer {
+            *zoom: 1;
+            bottom: 0;
+            padding: 0 15px;
+            position: fixed;
+            right: 0;
+            text-align: right;
+            width: 100%;
+        }
+        footer:before,
+        footer:after {
+            content: "";
+            display: table;
+        }
+        footer:after {
+            clear: both;
+        }
+        footer .item {
+            display: inline-block;
+            color: #2B3A4F;
+            font-size: 10px;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+        footer .item + .item {
+            margin-left: 10px;
+        }
+        footer .link {
+            width: 32px;
+        }
+        footer img {
+            width: 100%;
+        }
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+        }
+        p {
+            margin: 0;
+        }
+
+    </style>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Junge);
+
+        #scroll {
+            height: 300px;
+            border: 1px solid #ddd;
+            width: 60%;
+            overflow: auto;
+        }
+
+
+        .panel-css {
+
+
+            list-style: none;
+            background-color: rgba(0, 0, 0, 0.05);
+            background-image:
+                    linear-gradient(
+                            90deg,
+                            #2DCC70 10px,
+                            #EEE 10px,
+                            #EEE 11px,
+                            transparent 11px);
+            padding: 10px 15px 10px 25px;
+            border: 1px solid #CCC;
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+            width: 90%;
+            box-sizing: border-box;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+
+        #notebooks span {
+            display: block;
+            position: absolute;
+            background: #2DCC70;
+            bottom: -35px;
+            left: -1px;
+            width: 360px;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        #notebooks select {
+            width: 120px;
+            margin-left: 230px;
+            margin-top: -45px;
+            border-radius: 0 3px 3px 0;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            position: absolute;
+            padding: 7.5px;
+            box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        #notebooks select:focus, #query:focus {
+            border: 1px solid #2DCC70;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+            outline: none;
+        }</style>
+    <style>
+        .editb {
+            border-radius: 50%;
+            padding: 7px 11px 7px 11px;
+            outline: none;
+            background: gray;
+            border: 1px solid darkgray;
+            color: white;
+            transition: 0.5s linear;
+        }
+
+        .editb:hover {
+            background: darkgray;
+        }
+
+        /* delete button*/
+
+
+        /* yes delete button*/
+
+
+
+        h3 span {
+            color: #fa3380;
+        }
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+
+        .alert h4 {
+            margin: 0
+        }
+
+
+
+        .tab_grid_prof {
+            padding: 1em;
+            background: #fffdfd;
+            padding: 1em;
+            border: 1px solid rgba(221, 221, 221, 0.74);
+        }
+        .tab_grid_prof:nth-child(2),
+        .tab_grid_prof:nth-child(4) {
+            margin: 2em 0;
+        }
+
+        .tab_grid_prof:nth-child(5) {
+            margin: 0em 0 2em 0;
+        }
+
+        /* edit buttons */
+
+        #save-edit-btn {
+            border-radius: 100px;
+            outline: none;
+        }
+
+        #save-close-btn {
+            border-radius: 100px;
+            background: #0F9E5E;
+            color: #fff;
+            outline: none;
+        }
+
+
+
+        /*  FOLLOW*/
+
+
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<aside>
+    <header>
+        <div><img class="profile-picture" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_10.png"/>
+            <p>{{ app.user.username }}</p>
+        </div>
+    </header>
+    <nav class="side-navigation">
+        <ul>
+            <li class="active"><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="#" id="about"><i class="fa fa-star"></i>About Me</a></li>
+            <li><a href="#" id="contracts"><i class="fa fa-star"></i>Contracts</a></li>
+            <li><a href="{{ path('list_constat') }}" id="contracts"><i class="fa fa-star"></i>Constats</a></li>
+            <li><a href="#"><i class="fa fa-comments"></i>Reclamations</a></li>
+            <li><a href="#"><i class="fa fa-area-chart"></i>Devis</a></li>
+        </ul>
+    </nav>
+</aside>
+<main>
+
+    <header class="main-head">
+        <div class="icons"><i class="fa fa-user-md"></i><i class="fa fa-comments-o"></i><i class="fa fa-bell-o"><span class="number-alert">3</span></i></div>
+        <div class="logo"><i class="fa fa-rocket"></i></div>
+        <div class="search">
+            <input type="text" name="search" placeholder="Type here to search..." autocomplete="off"/><i class="fa fa-search"></i>
+        </div>
+    </header>
+
+    <div class="container user">
+        <div class="user-card">
+            <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_10.png"/></figure>
+            <div class="user-info">
+                <div class="name"> <span>{{ app.user.username }}</span><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+                <div class="user-role">
+                    Student &nbsp; &#8226;<a href="#">Learn more</a>
+                </div>
+                <div class="experience-points"><i class="fa fa-coffee"></i>8,977 exp</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="services-breadcrumb_w3layouts">
+        <div class="inner_breadcrumb">
+
+            <ul class="short_w3ls" _w3ls="">
+                <li><a href="{{ asset('list_constat') }}">Consulter mes constats</a><span>|</span></li>
+                <li><a href="{{ asset('add_constat') }}">Ajouter un constats</a><span>|</span></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+    <div class="services-breadcrumb_w3layouts">
+    <div class="inner_breadcrumb">
+
+        <ul class="short_w3ls" _w3ls=""  >
+            <li><button type="submit" class="btn btn-success" ><a href="{{ path('sort_constat',{'s' : 2}) }}">Voir les </a>constats traités</button> <span>|</span></li>
+            <li><button type="submit" class="btn btn-info" ><a href="{{ path('sort_constat',{'s' : 1}) }}">Voir les </a>constats en cours de traitement</button> <span>|</span></li>
+            <li><button type="submit" class="btn btn-warning" ><a href="{{ path('sort_constat',{'s' : 0}) }}">Voir les </a>constats standby</button> <span>|</span></li>
+            <li><button type="submit" class="btn btn-danger" ><a href="{{ path('sort_constat',{'s' : -1}) }}">Voir les </a>constats refusé</button> <span>|</span></li>
+
+        </ul>
+    </div>
+    </div>
+<div id="page-wrapper">
+    <div class="main-page">
+        <section class="contenutab">
+            <div class="container">
+        <form method="post">
+            <table class="TTA">
+                <tbody>
+                {% for c in constats %}
+                    <tr>
+                        <!-- Provided a full length title for the section of the form -->
+                        <td class="TTASectionHeader" colspan="2">
+                            {% if c.etat == -1 %}<a class="label label-danger">Refusé</a> {% elseif c.etat == 0  %}<a class="label label-warning">En attente d'acceptation</a> {% elseif c.etat == 1 %}<a class="label label-info">En cours de traitement</a>  {% else %} <a class="label label-success">Traité avec succès</a> {% endif %}
+                            <a class="toggle down" >N° Constat : {{ c.id_constat }}</a>
+                            <input type="hidden" name="id" value="{{ c.id_constat }}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table class="TTAInner">
+                                <tr>
+                                    <td>
+                                        <label>
+                                            N° Contrat :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="C1{{ c.id_constat }}" name="C1{{ c.id_constat }}" value="{{ c.IDContratA }}" disabled="disabled">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Date du constat :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="C2{{ c.id_constat }}" name="C2{{ c.id_constat }}" value="{{ c.dateConstat|date("d-m-Y") }}" disabled="disabled">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Lieu :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="C3{{ c.id_constat }}" name="C3{{ c.id_constat }}" value="{{ c.lieu }}" disabled="disabled">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Dégats humains :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="C4{{ c.id_constat }}" name="C4{{ c.id_constat }}" value="{{ c.degatsHumains }}" disabled="disabled">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Dégats matériels :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="C5{{ c.id_constat }}" name="C5{{ c.id_constat }}" value="{{ c.degatsMat}}" disabled="disabled">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Mes observations :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="C6{{ c.id_constat }}" name="C6{{ c.id_constat }}" value="{{ c.observations}}" disabled="disabled">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>
+                                            Circonstances :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <textarea id="C7{{ c.id_constat }}" name="C7{{ c.id_constat }}" value="{{ c.circonstances}}" disabled="disabled">{{ c.circonstances}}</textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Image du site de l'accident :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset("images/constat/#{c.getImage()}") }}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>QR Code :
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset("images/constat/#{c.getQrcode()}") }}" />
+                                    </td>
+                                </tr>
+                                {% if c.etat == 0 %}
+                                <tr>
+                                    <!--<td  class="text-left">
+                                        <a name="2" id="delete" href=""><i class="fa fa-print"></i> </a>
+                                    </td>!-->
+                                    <td  class="text-right"><a name="2" id="delete" href="{{ path('delete_constat',{'id':c.id_constat}) }}" {% if c.etat != 0 %} hidden="hidden" {% endif %} ><i class="fa fa-minus-square"></i> </a></td>
+                                    <td  class="text-right">
+                                        <input type="submit" id="savebut{{ c.id_constat }}" value="Sauvegarder les valeurs" hidden="hidden" />
+                                    </td>
+                                    <td  class="text-right">
+                                        <input type="button" value="Modifier les valeurs" onclick="editcheckd({{ c.id_constat }})" {% if c.etat != 0 %} hidden="hidden" {% endif %} />
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </form>
+            </div></section>
+    </div>
+</div>
+</main>
+<!-- //footer -->
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/table.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js-account/easyResponsiveTabs.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ asset("js-account/metisMenu.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("js-account/custom.js") }}"></script>
+<script type="text/javascript">
+
+
+    /*$("#delete").click(function() {
+        vtt = document.getElementById("id");
+        $.ajax({
+                type: 'POST',
+                url:  '',
+                success: function(response)
+                {
+                }
+            }
+        )});*/
+
+    $(document).ready(function() {
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+
+    function datashow(id,matricule,puissance,carburant,valeu)
+    {
+        document.getElementById("observation").value =  carburant;
+        document.getElementById("id1").value=id;
+        document.getElementById("place").value = valeu;
+        document.getElementById("contrat2").value= puissance;
+        document.getElementById("contrat1").value= matricule;
+
+
+    };
+    function editcheckd($id)
+    {
+        document.getElementById("C2"+$id).hidden=false;
+        document.getElementById("C3"+$id).hidden=false;
+        document.getElementById("C6"+$id).hidden=false;
+        document.getElementById("savebut"+$id).hidden=false;
+    };
+</script>
+<!-- light-case -->
+<script src="{{ asset('js-account/lightcase.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/tableToAccordion.js') }}"></script>
+<script src="{{ asset('js-account/jquery.events.touch.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/notification.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.TTA').tableToAccordion();
+    });
+</script>
+<script>
+    $('.showcase').lightcase();
+</script>
+<!--
+<script>
+
+    /// <reference path="typings/jquery.d.ts" />
+    var Navigation = /** @class */ (function () {
+        function Navigation() {
+            this.navItem = $('.side-navigation li');
+            this.categoryItem = $('.category-navigation li');
+            this.activeItem(this.navItem);
+            this.activeItem(this.categoryItem);
+        }
+        Navigation.prototype.activeItem = function (elem) {
+            var _this = this;
+            elem.click(function (event) {
+                event.preventDefault();
+                elem.removeClass("active");
+                $(event.currentTarget).addClass("active");
+                var url = $('a', $(event.currentTarget)).attr("data-url");
+                _this.fireAjax(url);
+            });
+        };
+        Navigation.prototype.fireAjax = function (url) {
+            var _this = this;
+            var main = $('.wrapper');
+            $.ajax({
+                url: url,
+                type: "GET",
+                beforeSend: function () {
+                    _this.startLoader();
+                },
+                success: function () {
+                    setTimeout(function () {
+                        _this.destroyLoader();
+                    }, 5000);
+                }
+            });
+        };
+        Navigation.prototype.startLoader = function () {
+            $('.wrapper').addClass("loading").append('<div class="loader"></div>');
+        };
+        Navigation.prototype.destroyLoader = function () {
+            $('.wrapper').removeClass("loading");
+            $('.spinner').remove();
+        };
+        return Navigation;
+    }());
+    var Tabs = /** @class */ (function () {
+        function Tabs() {
+            this.tab = $('.card .tabs li');
+            this.changeTab();
+        }
+        Tabs.prototype.changeTab = function () {
+            this.tab.click(function (event) {
+                var tab = $(event.currentTarget);
+                var tabId = tab.attr("data-tab");
+                tab.addClass("active");
+                tab.siblings().removeClass("active");
+                $('.card .content[data-content=' + tabId + ']').siblings().removeClass("visible");
+                $('.card .content[data-content=' + tabId + ']').addClass("visible");
+            });
+        };
+        return Tabs;
+    }());
+    var Collapse = /** @class */ (function () {
+        function Collapse() {
+            this.collapse();
+        }
+        Collapse.prototype.collapse = function () {
+            $('.hidden-content').slideUp("fast");
+            $('.show-more').click(function (event) {
+                var target = $(event.currentTarget), less = target.attr("data-less"), more = target.attr("data-more");
+                if (target.hasClass("active")) {
+                    target.removeClass("active");
+                    $('span', target).text(more);
+                    $('.fa', target).removeClass().addClass("fa fa-chevron-down");
+                    target.prev('.hidden-content').slideUp(250);
+                }
+                else {
+                    target.addClass("active");
+                    $('span', target).text(less);
+                    $('.fa', target).removeClass().addClass("fa fa-chevron-up");
+                    target.prev('.hidden-content').slideDown(250);
+                }
+            });
+        };
+        return Collapse;
+    }());
+    var Graphs = /** @class */ (function () {
+        function Graphs() {
+            this.graph = $('.graph');
+            this.setGraphValue();
+        }
+        Graphs.prototype.setGraphValue = function () {
+            this.graph.each(function (i, element) {
+                var graph = $(element),
+                    // margin to correct the card graphs when there is a 100% value
+                    margin = graph.parents('.experience-graphs').length ? 0 : 13, bar = $('.bar', graph), barText = graph.attr("data-text"), value = $('.value', graph), parentHeight = graph.parent().innerHeight() - margin, barValue = parseInt(graph.attr("data-value")), barHeight = parentHeight * (barValue / 100);
+                bar.text(barText);
+                value.css({
+                    height: barHeight + "px"
+                });
+                bar.css({
+                    bottom: (barHeight - 1) + "px"
+                });
+            });
+        };
+        return Graphs;
+    }());
+    var LineChart = /** @class */ (function () {
+        function LineChart() {
+        }
+        LineChart.prototype.initChart = function () {
+            var ctx = $("#lineChart");
+            var myLineChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+        };
+        return LineChart;
+    }());
+    new Navigation();
+    new Tabs();
+    new Collapse();
+    new Graphs();
+    new LineChart();
+
+
+</script>
+ //light-case -->
+
+</body>
+</html>

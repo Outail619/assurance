@@ -1,0 +1,80 @@
+assurance_homepage:
+    path:     /
+    defaults: { _controller: AssuranceBundle:Default:index }
+
+
+home:
+    path:     /index
+    defaults: { _controller: AssuranceBundle:Home:home }
+
+admin:
+    path:     /admin
+    defaults: { _controller: AssuranceBundle:Admin:admin }
+
+register:
+    path:     /register
+    defaults: { _controller: AssuranceBundle:Home:addinfo }
+
+account:
+    path:     /account
+    defaults: { _controller: AssuranceBundle:Home:account }
+
+showassurance:
+    path:     /assurances
+    defaults: { _controller: AssuranceBundle:Matchmaking:showassurance }
+
+details:
+  path:     /details/{id}
+  defaults: { _controller: AssuranceBundle:Matchmaking:showassurancedetails }
+
+delete:
+  path:     /delete/{id}
+  defaults: { _controller: AssuranceBundle:Home:delete }
+
+devis:
+  path:     /devis
+  defaults: { _controller: AssuranceBundle:Matchmaking:Devis }
+
+FormulePrice:
+  path:     /formule
+  defaults: { _controller: AssuranceBundle:Matchmaking:setPrice }
+
+garantiePrice:
+  path:     /garantie
+  defaults: { _controller: AssuranceBundle:Matchmaking:changePrice }
+
+success:
+  path:     /success
+  defaults: { _controller: AssuranceBundle:Matchmaking:success }
+
+users:
+    path:     /users
+    defaults: { _controller: AssuranceBundle:responsable:users }
+
+list_constat:
+     path:     /ListConstat
+     defaults: { _controller: AssuranceBundle:Constat:List }
+add_constat:
+     path:     /AddConstat
+     defaults: { _controller: AssuranceBundle:Constat:create}
+delete_constat:
+     path:     /DeleteConstat/{id}
+     defaults: { _controller: AssuranceBundle:Constat:delete}
+update_constat:
+     path:     /UpdateConstat
+     defaults: { _controller: AssuranceBundle:Constat:update}
+change_statut_constat:
+     path:     /ChangeStatus
+     defaults: { _controller: AssuranceBundle:Constat:ChangeStatus}
+affecter_expert:
+    path:      /affecter_expert/{id}
+    defaults:  { _controller: AssuranceBundle:Constat:AffecterExpert}
+print_constat:
+    path:      /PrintConstat/{id}
+    defaults:  { _controller: AssuranceBundle:Constat:printpdf}
+sort_constat:
+    path:      /SortConstat/{s}
+    defaults:  { _controller: AssuranceBundle:Constat:SortConstat}
+list_constat2:
+    path:      /ListConstatResp
+    defaults:  {  _controller: AssuranceBundle:Constat:ListConstat_Back}

@@ -1,0 +1,228 @@
+<?php
+
+namespace EntityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * contrat
+ *
+ * @ORM\Table(name="contrat")
+ * @ORM\Entity(repositoryClass="EntityBundle\Repository\contratRepository")
+ */
+class contrat
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference_contrat", type="string", length=255)
+     */
+    private $referenceContrat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_contrat", type="string", length=255)
+     */
+    private $typeContrat;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_signature", type="date")
+     */
+    private $dateSignature;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_fin", type="date")
+     */
+    private $dateFin;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_debut", type="date")
+     */
+    private $dateDebut;
+
+
+
+    /**
+     * @ORM\OneToOne(targetEntity="EntityBundle\Entity\vehicule")
+     * @ORM\JoinColumn(name="vehicule", referencedColumnName="id", nullable=true)
+     */
+    private $vehicule;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="EntityBundle\Entity\agence_assurance", inversedBy="contrat" )
+     */
+    private $assurances;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set referenceContrat
+     *
+     * @param string $referenceContrat
+     *
+     * @return contrat
+     */
+    public function setReferenceContrat($referenceContrat)
+    {
+        $this->referenceContrat = $referenceContrat;
+
+        return $this;
+    }
+
+    /**
+     * Get referenceContrat
+     *
+     * @return string
+     */
+    public function getReferenceContrat()
+    {
+        return $this->referenceContrat;
+    }
+
+    /**
+     * Set typeContrat
+     *
+     * @param string $typeContrat
+     *
+     * @return contrat
+     */
+    public function setTypeContrat($typeContrat)
+    {
+        $this->typeContrat = $typeContrat;
+
+        return $this;
+    }
+
+    /**
+     * Get typeContrat
+     *
+     * @return string
+     */
+    public function getTypeContrat()
+    {
+        return $this->typeContrat;
+    }
+
+    /**
+     * Set dateSignature
+     *
+     * @param \DateTime $dateSignature
+     *
+     * @return contrat
+     */
+    public function setDateSignature($dateSignature)
+    {
+        $this->dateSignature = $dateSignature;
+
+        return $this;
+    }
+
+    /**
+     * Get dateSignature
+     *
+     * @return \DateTime
+     */
+    public function getDateSignature()
+    {
+        return $this->dateSignature;
+    }
+
+    /**
+     * Set dateFin
+     *
+     * @param \DateTime $dateFin
+     *
+     * @return contrat
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    /**
+     * Get dateFin
+     *
+     * @return \DateTime
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+    /**
+     * Set dateDebut
+     *
+     * @param \DateTime $dateDebut
+     *
+     * @return contrat
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDebut
+     *
+     * @return \DateTime
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * Set vehicule
+     *
+     * @param \EntityBundle\Entity\vehicule $vehicule
+     *
+     * @return contrat
+     */
+    public function setVehicule(\EntityBundle\Entity\vehicule $vehicule = null)
+    {
+        $this->vehicule = $vehicule;
+
+        return $this;
+    }
+
+    /**
+     * Get vehicule
+     *
+     * @return \EntityBundle\Entity\vehicule
+     */
+    public function getVehicule()
+    {
+        return $this->vehicule;
+    }
+
+
+}
